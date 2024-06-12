@@ -22,21 +22,20 @@ struct BroadcastButtons: View {
                         .padding(13)
                         .foregroundStyle(.white)
                 }
-                .padding(.bottom, 20)
-                .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.circle)
                 Button {
                     // кнопка для запуска трансляции
                 } label: {
-                    Image(systemName: "play.fill")                      .resizable()
+                    Image(systemName: "play.fill")                      
+                        .resizable()
                         .frame(maxWidth: 25, maxHeight: 25)
                         .padding(13)
                 }
-                .padding(.bottom, 20)
-                .buttonStyle(.borderedProminent)
-                .buttonBorderShape(.circle)
+                
                 Spacer()
             }
+            .padding(.bottom, 20)
+            .buttonStyle(.borderedProminent)
+            .buttonBorderShape(.circle)
             .opacity(0.6)
         }
         .tint(.clear)
