@@ -10,11 +10,10 @@ import Foundation
 struct MainViewModel {
     var usersCount = [Users]()
     var userLocation = [UserLocation(latitude: String(55.75222), longitude: String(37.61556))]
-    
 }
 
 struct Users {
-    var id = UUID()
+    var image: String
     var name: String
     var lastName: String
 }

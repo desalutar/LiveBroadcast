@@ -18,7 +18,8 @@ struct BroadcastView: View {
                             .resizable()
                             .scaledToFill()
                             .edgesIgnoringSafeArea(.top)
-                            .scaleEffect(x: -1)
+//                            .scaleEffect(x: -1)
+                        // когда стоит фронталка, нужно включить, чтоб не зеркалила камера
                     } else {
                         ContentUnavailableView("No camera feed", systemImage: "xmark.circle.fill")
                     }

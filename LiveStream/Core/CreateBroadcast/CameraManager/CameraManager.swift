@@ -30,7 +30,7 @@ class CameraManager: NSObject {
     
     /* AVCaptureDevice объект представляет аппаратное или виртуальное устройство
      захвата которое может предоставлять один или несколько потоков мультимедиа определенного типа */
-    private let systemPreferredCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front)
+    private let systemPreferredCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back)
     
     // очередь для которой должны быть вызваны AVCaptureVideoDataOutputSampleBufferDelegate обратные вызовы
     /* обязательно использовать очередь последовательной отправки

@@ -14,7 +14,6 @@
 		2351244F2C010C250005D8C9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351244E2C010C250005D8C9 /* MainTabView.swift */; };
 		235124512C0118540005D8C9 /* OnlineBroadcasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235124502C0118540005D8C9 /* OnlineBroadcasts.swift */; };
 		235124532C011A080005D8C9 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235124522C011A080005D8C9 /* FeedCell.swift */; };
-		235124572C0123C60005D8C9 /* MapViewButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235124562C0123C60005D8C9 /* MapViewButtons.swift */; };
 		235124592C01321E0005D8C9 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235124582C01321E0005D8C9 /* NotificationsView.swift */; };
 		2351245B2C01322C0005D8C9 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351245A2C01322C0005D8C9 /* NotificationCell.swift */; };
 		2351245D2C0135920005D8C9 /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351245C2C0135920005D8C9 /* CurrentUserProfileView.swift */; };
@@ -26,6 +25,7 @@
 		235124702C022F8E0005D8C9 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351246F2C022F8E0005D8C9 /* CustomVideoPlayer.swift */; };
 		2376C85C2C1A6EB900D990F8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C85B2C1A6EB900D990F8 /* MainViewModel.swift */; };
 		2376C85E2C1A6FE700D990F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C85D2C1A6FE700D990F8 /* MapView.swift */; };
+		2376C8642C1B106300D990F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8632C1B106300D990F8 /* LocationManager.swift */; };
 		23C5E49F2C04CDC700A76759 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E4992C04CDC700A76759 /* CameraManager.swift */; };
 		23C5E4A02C04CDC700A76759 /* CIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */; };
 		23C5E4A12C04CDC700A76759 /* CMSampleBuffer +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */; };
@@ -43,7 +43,6 @@
 		2351244E2C010C250005D8C9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		235124502C0118540005D8C9 /* OnlineBroadcasts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineBroadcasts.swift; sourceTree = "<group>"; };
 		235124522C011A080005D8C9 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
-		235124562C0123C60005D8C9 /* MapViewButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewButtons.swift; sourceTree = "<group>"; };
 		235124582C01321E0005D8C9 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		2351245A2C01322C0005D8C9 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		2351245C2C0135920005D8C9 /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
@@ -55,6 +54,8 @@
 		2351246F2C022F8E0005D8C9 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
 		2376C85B2C1A6EB900D990F8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		2376C85D2C1A6FE700D990F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		2376C8632C1B106300D990F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		2376C8652C1B2CF500D990F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		23C5E4992C04CDC700A76759 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage + Extension.swift"; sourceTree = "<group>"; };
 		23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer +Extension.swift"; sourceTree = "<group>"; };
@@ -93,12 +94,10 @@
 		2351242D2C0105A30005D8C9 /* LiveStream */ = {
 			isa = PBXGroup;
 			children = (
+				2376C8652C1B2CF500D990F8 /* Info.plist */,
 				235124432C01091F0005D8C9 /* App */,
 				235124422C01091D0005D8C9 /* Core */,
-				235124412C01091B0005D8C9 /* Extensions */,
 				235124402C0109180005D8C9 /* Model */,
-				2351243F2C0109150005D8C9 /* Services */,
-				2351243E2C01090F0005D8C9 /* Utils */,
 				235124322C0105A50005D8C9 /* Assets.xcassets */,
 				235124342C0105A50005D8C9 /* Preview Content */,
 			);
@@ -113,20 +112,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2351243E2C01090F0005D8C9 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		2351243F2C0109150005D8C9 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		235124402C0109180005D8C9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,13 +119,6 @@
 				235124672C021FA80005D8C9 /* Post.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		235124412C01091B0005D8C9 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		235124422C01091D0005D8C9 /* Core */ = {
@@ -186,8 +164,8 @@
 		235124462C0109970005D8C9 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				2376C85D2C1A6FE700D990F8 /* MapView.swift */,
-				235124562C0123C60005D8C9 /* MapViewButtons.swift */,
+				2376C8622C1B0FEB00D990F8 /* Model */,
+				2376C8612C1B0FE200D990F8 /* Views */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -283,6 +261,22 @@
 				2351246D2C0220150005D8C9 /* FeedViewModel.swift */,
 			);
 			path = VIewModel;
+			sourceTree = "<group>";
+		};
+		2376C8612C1B0FE200D990F8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2376C85D2C1A6FE700D990F8 /* MapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2376C8622C1B0FEB00D990F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2376C8632C1B106300D990F8 /* LocationManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		23C5E49E2C04CDC700A76759 /* CreateBroadcast */ = {
@@ -401,9 +395,9 @@
 				235124612C01363E0005D8C9 /* PostGridView.swift in Sources */,
 				23C5E4A02C04CDC700A76759 /* CIImage + Extension.swift in Sources */,
 				2351245D2C0135920005D8C9 /* CurrentUserProfileView.swift in Sources */,
-				235124572C0123C60005D8C9 /* MapViewButtons.swift in Sources */,
 				23F8C9B92C0757C9006DAB2A /* BroadcastButtons.swift in Sources */,
 				23C5E4A12C04CDC700A76759 /* CMSampleBuffer +Extension.swift in Sources */,
+				2376C8642C1B106300D990F8 /* LocationManager.swift in Sources */,
 				235124592C01321E0005D8C9 /* NotificationsView.swift in Sources */,
 				2376C85C2C1A6EB900D990F8 /* MainViewModel.swift in Sources */,
 				23C5E49F2C04CDC700A76759 /* CameraManager.swift in Sources */,
@@ -543,7 +537,10 @@
 				DEVELOPMENT_TEAM = 4RAF86LK9V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiveStream/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Show the iser location";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -574,7 +571,10 @@
 				DEVELOPMENT_TEAM = 4RAF86LK9V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiveStream/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Show the iser location";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
