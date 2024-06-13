@@ -100,7 +100,7 @@ class CameraManager: NSObject {
         captureSession.addInput(deviceInput)
         captureSession.addOutput(videoOutput)
         
-//         Устанавливает ориентацию камера
+        // Устанавливает ориентацию камера
         if let connection = videoOutput.connection(with: .video) {
             let desiredRotationAngle: CGFloat = 90.0
             if connection.isVideoRotationAngleSupported(desiredRotationAngle) {
@@ -109,7 +109,6 @@ class CameraManager: NSObject {
                 print("The desired rotation angle \(desiredRotationAngle) is not supported.")
             }
         }
-            
     }
     
     // Отвечает только за запуск сеанса съемки
@@ -129,7 +128,6 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
     // Функция captureOutput(_:didOutput:from:) вызывается всякий раз, когда камера захватывает новый видеокадр.
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let currentFrame = sampleBuffer.cgImage else { return }
-        
         addToPreviewStream?(currentFrame)
     }
 }

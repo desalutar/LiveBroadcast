@@ -36,7 +36,7 @@ func createTestImage() -> CGImage {
     let context = UIGraphicsGetCurrentContext()!
     
     // Заполняем его каким-то цветом для визуализации
-    context.setFillColor(UIColor.blue.cgColor)
+    context.setFillColor(UIColor.orange.cgColor)
     context.fill(CGRect(origin: .zero, size: size))
     
     let cgImage = context.makeImage()!

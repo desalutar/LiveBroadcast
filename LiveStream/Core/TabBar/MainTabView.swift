@@ -13,12 +13,12 @@ struct MainTabView: View {
     @State private var viewModel = ViewModel()
     var body: some View {
         TabView(selection: $selectedTab) {
-            SearchUserView()
+            MapView()
                 .tabItem {
                     VStack {
-                        Image(systemName: selectedTab == 0 ? "list.bullet.rectangle.portrait.fill" : "list.bullet.rectangle.portrait")
+                        Image(systemName: selectedTab == 0 ? "globe" : "globe")
                             .environment(\.symbolVariants, selectedTab == 0 ? .fill : .none)
-                        Text("List users")
+                        Text("Map")
                     }
                 }
                 .onAppear { selectedTab = 0 }
