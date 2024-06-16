@@ -17,7 +17,8 @@ struct MainTabView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: selectedTab == 0 ? "globe" : "globe")
-                            .environment(\.symbolVariants, selectedTab == 0 ? .fill : .none)
+                            .environment(\.symbolVariants, 
+                                          selectedTab == 0 ? .fill : .none)
                         Text("Map")
                     }
                 }
@@ -28,7 +29,8 @@ struct MainTabView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: selectedTab == 1 ? "rectangle.stack.badge.person.crop.fill" : "rectangle.stack.badge.person.crop")
-                            .environment(\.symbolVariants, selectedTab == 1 ? .fill : .none)
+                            .environment(\.symbolVariants, 
+                                          selectedTab == 1 ? .fill : .none)
                         Text("Broacasts")
                     }
                 }
@@ -39,7 +41,8 @@ struct MainTabView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: selectedTab == 2 ? "plus.circle.fill" : "plus.circle")
-                            .environment(\.symbolVariants, selectedTab == 4 ? .fill : .none)
+                            .environment(\.symbolVariants,
+                                          selectedTab == 4 ? .fill : .none)
                         Text("Go Online")
                     }
                 }
@@ -51,7 +54,8 @@ struct MainTabView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: selectedTab == 3 ? "bell.fill" : "bell")
-                            .environment(\.symbolVariants, selectedTab == 3 ? .fill : .none)
+                            .environment(\.symbolVariants,
+                                          selectedTab == 3 ? .fill : .none)
                         Text("Notifications")
                     }
                 }
@@ -62,7 +66,8 @@ struct MainTabView: View {
                 .tabItem {
                     VStack {
                         Image(systemName: selectedTab == 4 ? "person.fill" : "person")
-                            .environment(\.symbolVariants, selectedTab == 4 ? .fill : .none)
+                            .environment(\.symbolVariants,
+                                          selectedTab == 4 ? .fill : .none)
                         Text("Profile")
                     }
                 }
@@ -74,4 +79,5 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
+        .preferredColorScheme(.dark)
 }

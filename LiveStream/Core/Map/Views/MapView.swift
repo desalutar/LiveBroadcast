@@ -12,30 +12,18 @@ struct MapView: View {
     @State private var showActionSheet = true
     @State private var cameraPositionOnMap: MapCameraPosition = .userLocation(fallback: .automatic)
     @ObservedObject private var locationManager = LocationManager()
+    
     var body: some View {
         ZStack {
-            Map(position: $cameraPositionOnMap) {
-                
-            }
-            .mapControls({
-                MapUserLocationButton()
-            })
-            .onAppear {
-                CLLocationManager().requestWhenInUseAuthorization()
-            }
-            .mapStyle(.imagery(elevation: .realistic))
-            //                .sheet(isPresented: $showActionSheet, content: {
-            //                        Text("Hello")
-            //                    .presentationDetents(
-            //                        [
-            //                            .fraction(0.2),
-            //                            .height(300),
-            //                            .fraction(0.5),
-            //                            .height(600)
-            //                        ]
-            //                    )
-            //                })
+            GlobeMapView(coordinate: .moscowCity)
+                .ignoresSafeArea()
+                .onAppear {
+                    locationManager.requestLocation()
+                    
+                    CLLocationManager().requestWhenInUseAuthorization()
+                }
         }
+        
     }
 }
 

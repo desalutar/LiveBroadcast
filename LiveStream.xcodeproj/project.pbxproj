@@ -26,6 +26,7 @@
 		2376C85C2C1A6EB900D990F8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C85B2C1A6EB900D990F8 /* MainViewModel.swift */; };
 		2376C85E2C1A6FE700D990F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C85D2C1A6FE700D990F8 /* MapView.swift */; };
 		2376C8642C1B106300D990F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8632C1B106300D990F8 /* LocationManager.swift */; };
+		2376C8692C1DC79300D990F8 /* GlobeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8682C1DC79300D990F8 /* GlobeMapView.swift */; };
 		23C5E49F2C04CDC700A76759 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E4992C04CDC700A76759 /* CameraManager.swift */; };
 		23C5E4A02C04CDC700A76759 /* CIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */; };
 		23C5E4A12C04CDC700A76759 /* CMSampleBuffer +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */; };
@@ -56,6 +57,7 @@
 		2376C85D2C1A6FE700D990F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2376C8632C1B106300D990F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2376C8652C1B2CF500D990F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2376C8682C1DC79300D990F8 /* GlobeMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobeMapView.swift; sourceTree = "<group>"; };
 		23C5E4992C04CDC700A76759 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage + Extension.swift"; sourceTree = "<group>"; };
 		23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer +Extension.swift"; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		2376C8622C1B0FEB00D990F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2376C8682C1DC79300D990F8 /* GlobeMapView.swift */,
 				2376C8632C1B106300D990F8 /* LocationManager.swift */,
 			);
 			path = Model;
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				235124512C0118540005D8C9 /* OnlineBroadcasts.swift in Sources */,
+				2376C8692C1DC79300D990F8 /* GlobeMapView.swift in Sources */,
 				235124702C022F8E0005D8C9 /* CustomVideoPlayer.swift in Sources */,
 				2351245B2C01322C0005D8C9 /* NotificationCell.swift in Sources */,
 				23C5E4A22C04CDC700A76759 /* BroadcastView.swift in Sources */,
