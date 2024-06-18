@@ -9,45 +9,36 @@ import MapKit
 
 struct GlobeMapView: UIViewRepresentable {
     var coordinate: CLLocationCoordinate2D
-
     class Coordinator: NSObject, MKMapViewDelegate {
         var parent: GlobeMapView
-
+        
         init(parent: GlobeMapView) {
             self.parent = parent
         }
     }
-
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
     }
-
+    
     func makeUIView(context: Context) -> MKMapView {
-        let mapView = MKMapView()
-        mapView.delegate = context.coordinator
-        mapView.mapType = .satelliteFlyover
-
-        let camera = MKMapCamera()
-        camera.centerCoordinate = coordinate
-        camera.altitude = 33456780
-        mapView.setCamera(camera, animated: true)
+        let globeMap = MKMapView()
+        globeMap.delegate = context.coordinator
+        globeMap.preferredConfiguration = MKImageryMapConfiguration(elevationStyle: .realistic)
         
-        mapView.showsBuildings = false
-        mapView.showsCompass = false
-        mapView.showsScale = false
-        mapView.pointOfInterestFilter = .includingAll
-
-        // Добавляем метку
+        let mapCamera = MKMapCamera()
+        mapCamera.centerCoordinate = coordinate
+        mapCamera.centerCoordinateDistance = 37456780
+        globeMap.setCamera(mapCamera, animated: true)
+        
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
-        mapView.addAnnotation(annotation)
-
-        return mapView
+        globeMap.addAnnotation(annotation)
+        return globeMap
     }
-
-    func updateUIView(_ uiView: MKMapView, context: Context) {
-        // Обновление карты при необходимости
+    
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        
     }
-
     typealias UIViewType = MKMapView
 }

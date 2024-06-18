@@ -12,6 +12,10 @@ struct MapView: View {
     @State private var showActionSheet = true
     @State private var cameraPositionOnMap: MapCameraPosition = .userLocation(fallback: .automatic)
     @ObservedObject private var locationManager = LocationManager()
+    @State private var region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
+            span: MKCoordinateSpan(latitudeDelta: 60, longitudeDelta: 60)
+        )
     
     var body: some View {
         ZStack {
@@ -19,8 +23,6 @@ struct MapView: View {
                 .ignoresSafeArea()
                 .onAppear {
                     locationManager.requestLocation()
-                    
-                    CLLocationManager().requestWhenInUseAuthorization()
                 }
         }
         

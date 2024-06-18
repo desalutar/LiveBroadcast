@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct MainViewModel {
     var usersCount = [Users]()
@@ -13,9 +14,11 @@ struct MainViewModel {
 }
 
 struct Users {
+    let id: UUID
     var image: String
     var name: String
     var lastName: String
+    let coordinate: CLLocationCoordinate2D
 }
 
 struct UserLocation {

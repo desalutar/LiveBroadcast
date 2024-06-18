@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2351242F2C0105A30005D8C9 /* LiveStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351242E2C0105A30005D8C9 /* LiveStreamApp.swift */; };
-		235124312C0105A30005D8C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235124302C0105A30005D8C9 /* ContentView.swift */; };
+		235124312C0105A30005D8C9 /* ButtonSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235124302C0105A30005D8C9 /* ButtonSheet.swift */; };
 		235124332C0105A50005D8C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235124322C0105A50005D8C9 /* Assets.xcassets */; };
 		235124362C0105A50005D8C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235124352C0105A50005D8C9 /* Preview Assets.xcassets */; };
 		2351244F2C010C250005D8C9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351244E2C010C250005D8C9 /* MainTabView.swift */; };
@@ -27,6 +27,7 @@
 		2376C85E2C1A6FE700D990F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C85D2C1A6FE700D990F8 /* MapView.swift */; };
 		2376C8642C1B106300D990F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8632C1B106300D990F8 /* LocationManager.swift */; };
 		2376C8692C1DC79300D990F8 /* GlobeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8682C1DC79300D990F8 /* GlobeMapView.swift */; };
+		2376C86B2C1F5CBB00D990F8 /* BottonSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C86A2C1F5CBB00D990F8 /* BottonSheet.swift */; };
 		23C5E49F2C04CDC700A76759 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E4992C04CDC700A76759 /* CameraManager.swift */; };
 		23C5E4A02C04CDC700A76759 /* CIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */; };
 		23C5E4A12C04CDC700A76759 /* CMSampleBuffer +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */; };
@@ -38,7 +39,7 @@
 /* Begin PBXFileReference section */
 		2351242B2C0105A30005D8C9 /* LiveStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2351242E2C0105A30005D8C9 /* LiveStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamApp.swift; sourceTree = "<group>"; };
-		235124302C0105A30005D8C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		235124302C0105A30005D8C9 /* ButtonSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonSheet.swift; sourceTree = "<group>"; };
 		235124322C0105A50005D8C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		235124352C0105A50005D8C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2351244E2C010C250005D8C9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		2376C8632C1B106300D990F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2376C8652C1B2CF500D990F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2376C8682C1DC79300D990F8 /* GlobeMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobeMapView.swift; sourceTree = "<group>"; };
+		2376C86A2C1F5CBB00D990F8 /* BottonSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottonSheet.swift; sourceTree = "<group>"; };
 		23C5E4992C04CDC700A76759 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage + Extension.swift"; sourceTree = "<group>"; };
 		23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer +Extension.swift"; sourceTree = "<group>"; };
@@ -175,7 +177,7 @@
 		235124472C01099A0005D8C9 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				235124302C0105A30005D8C9 /* ContentView.swift */,
+				235124302C0105A30005D8C9 /* ButtonSheet.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				2376C8682C1DC79300D990F8 /* GlobeMapView.swift */,
+				2376C86A2C1F5CBB00D990F8 /* BottonSheet.swift */,
 				2376C8632C1B106300D990F8 /* LocationManager.swift */,
 			);
 			path = Model;
@@ -388,7 +391,7 @@
 				23C5E4A22C04CDC700A76759 /* BroadcastView.swift in Sources */,
 				2351245F2C0136330005D8C9 /* ProfileHeaderView.swift in Sources */,
 				235124532C011A080005D8C9 /* FeedCell.swift in Sources */,
-				235124312C0105A30005D8C9 /* ContentView.swift in Sources */,
+				235124312C0105A30005D8C9 /* ButtonSheet.swift in Sources */,
 				2351246E2C0220150005D8C9 /* FeedViewModel.swift in Sources */,
 				235124682C021FA80005D8C9 /* Post.swift in Sources */,
 				2376C85E2C1A6FE700D990F8 /* MapView.swift in Sources */,
@@ -396,6 +399,7 @@
 				235124662C0139970005D8C9 /* UserStatView.swift in Sources */,
 				2351244F2C010C250005D8C9 /* MainTabView.swift in Sources */,
 				23C5E4A32C04CDC700A76759 /* ViewModel.swift in Sources */,
+				2376C86B2C1F5CBB00D990F8 /* BottonSheet.swift in Sources */,
 				235124612C01363E0005D8C9 /* PostGridView.swift in Sources */,
 				23C5E4A02C04CDC700A76759 /* CIImage + Extension.swift in Sources */,
 				2351245D2C0135920005D8C9 /* CurrentUserProfileView.swift in Sources */,
