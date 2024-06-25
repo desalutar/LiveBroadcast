@@ -10,18 +10,32 @@ import CoreLocation
 
 struct MainViewModel {
     var usersCount = [Users]()
-    var userLocation = [UserLocation(latitude: String(55.75222), longitude: String(37.61556))]
 }
 
-struct Users {
-    let id: UUID
-    var image: String
-    var name: String
-    var lastName: String
-    let coordinate: CLLocationCoordinate2D
+struct Users: Codable, Identifiable {
+    
+    let id: Int?
+    let name, username: String?
+    let address: Address?
+    
+    var userLatitude: Double?
+    var userLongitude: Double?
+    
+    var coordinate: CLLocationCoordinate2D? {
+        guard let latitudeStrings = address?.geo.lat,
+              let longitudeStrings = address?.geo.lng,
+              let latitude = Double(latitudeStrings),
+              let longitude = Double(longitudeStrings) else {
+            return nil
+        }
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 }
 
-struct UserLocation {
-    var latitude: String
-    var longitude: String
+struct Address: Codable {
+    let geo: Geo
+}
+
+struct Geo: Codable {
+    let lat, lng: String?
 }

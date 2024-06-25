@@ -7,32 +7,64 @@
 
 import SwiftUI
 import MapKit
+import _CoreLocationUI_SwiftUI
 
 struct MapView: View {
-    @State private var showActionSheet = true
-    @State private var cameraPositionOnMap: MapCameraPosition = .userLocation(fallback: .automatic)
+    @State var ispresent = false
+    @State private var selectedUser: Users?
     @ObservedObject private var locationManager = LocationManager()
-    @State private var region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 0, longitude: 0),
-            span: MKCoordinateSpan(latitudeDelta: 60, longitudeDelta: 60)
+    @StateObject private var networkManager = NetworkManager()
+    
+    @State private var cameraPosition: MapCameraPosition = .userLocation(
+        followsHeading: true,
+        fallback: .camera(MapCamera(
+            centerCoordinate: .moscowCity,
+            distance: 34538979)
         )
+    )
     
     var body: some View {
         ZStack {
-            GlobeMapView(coordinate: .moscowCity)
-                .ignoresSafeArea()
-                .onAppear {
-                    locationManager.requestLocation()
+            Map(position: $cameraPosition) {
+                ForEach(networkManager.users) { user in
+                    Annotation(user.name ?? "",
+                               coordinate: user.coordinate ?? .moscowCity) {
+                        ZStack {
+                            Image(systemName: "person")
+                       }
+                        .onTapGesture {
+                            selectedUser = user
+                            ispresent.toggle()
+                        }
+                    }
                 }
+            }
+            .mapControlVisibility(.hidden)
+            .mapStyle(.hybrid(elevation: .realistic))
+            .onAppear {
+                locationManager.requestLocation()
+                networkManager.start()
+                
+            }
+            MapButtons(cameraPosition: $cameraPosition, 
+                       locationManager: locationManager)
         }
-        
+        .sheet(isPresented: $ispresent, content: {
+            VStack {
+                Text(selectedUser?.name ?? "")
+            }
+        })
     }
 }
 
-
 extension CLLocationCoordinate2D {
-    static let moscowCity = CLLocationCoordinate2D(latitude: 55.75222, longitude:  37.61556)
+    static let moscowCity =
+    CLLocationCoordinate2D(
+        latitude: 55.75222,
+        longitude:  37.61556
+    )
 }
+
 #Preview {
     MapView()
 }
