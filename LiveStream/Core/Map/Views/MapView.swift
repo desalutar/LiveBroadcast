@@ -43,6 +43,7 @@ struct MapView: View {
             .sheet(isPresented: $bottomSheetShown, content: {
                 UserDetailsView(users: $selectedUser)
                     .presentationDetents([.medium])
+                    .presentationDragIndicator(.visible)
             })
             
             MapButtons(cameraPosition: $cameraPosition,

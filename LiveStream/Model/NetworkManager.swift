@@ -28,7 +28,6 @@ class NetworkManager: ObservableObject {
             .sink { [weak self] _ in
                 self?.fetchUsers()
             }
-        
     }
     
     func fetchUsers() {

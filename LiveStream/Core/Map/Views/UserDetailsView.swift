@@ -27,6 +27,7 @@ struct UserDetailsView: View {
                     .padding(.leading, 20)
                     Spacer()
                 }
+                
                 Button {
                     // action for watch broadcast
                 } label: {
@@ -49,5 +50,5 @@ struct UserDetailsView: View {
 }
 
 //#Preview {
-//    UserDetailsView()
+//    UserDetailsView(users: $mock)
 //}
