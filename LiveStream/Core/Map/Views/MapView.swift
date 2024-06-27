@@ -10,11 +10,10 @@ import MapKit
 import _CoreLocationUI_SwiftUI
 
 struct MapView: View {
-    @State var ispresent = false
-    @State private var selectedUser: Users?
     @ObservedObject private var locationManager = LocationManager()
     @StateObject private var networkManager = NetworkManager()
-    
+    @State private var bottomSheetShown = false
+    @State private var selectedUser: Users?
     @State private var cameraPosition: MapCameraPosition = .userLocation(
         followsHeading: true,
         fallback: .camera(MapCamera(
@@ -34,26 +33,25 @@ struct MapView: View {
                        }
                         .onTapGesture {
                             selectedUser = user
-                            ispresent.toggle()
+                            bottomSheetShown.toggle()
                         }
                     }
                 }
             }
             .mapControlVisibility(.hidden)
             .mapStyle(.hybrid(elevation: .realistic))
-            .onAppear {
-                locationManager.requestLocation()
-                networkManager.start()
-                
-            }
-            MapButtons(cameraPosition: $cameraPosition, 
+            .sheet(isPresented: $bottomSheetShown, content: {
+                UserDetailsView(users: $selectedUser)
+                    .presentationDetents([.medium])
+            })
+            
+            MapButtons(cameraPosition: $cameraPosition,
                        locationManager: locationManager)
         }
-        .sheet(isPresented: $ispresent, content: {
-            VStack {
-                Text(selectedUser?.name ?? "")
-            }
-        })
+        .onAppear {
+            locationManager.requestLocation()
+            networkManager.start()
+        }
     }
 }
 

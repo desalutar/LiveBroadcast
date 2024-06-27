@@ -28,6 +28,7 @@
 		2376C8642C1B106300D990F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8632C1B106300D990F8 /* LocationManager.swift */; };
 		2376C86E2C23200F00D990F8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C86D2C23200F00D990F8 /* NetworkManager.swift */; };
 		2376C8B02C29CA1D00D990F8 /* MapButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8AF2C29CA1D00D990F8 /* MapButtons.swift */; };
+		2376C8B42C2CC1B900D990F8 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8B32C2CC1B900D990F8 /* UserDetailsView.swift */; };
 		23C5E49F2C04CDC700A76759 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E4992C04CDC700A76759 /* CameraManager.swift */; };
 		23C5E4A02C04CDC700A76759 /* CIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */; };
 		23C5E4A12C04CDC700A76759 /* CMSampleBuffer +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */; };
@@ -60,6 +61,7 @@
 		2376C8652C1B2CF500D990F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2376C86D2C23200F00D990F8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2376C8AF2C29CA1D00D990F8 /* MapButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtons.swift; sourceTree = "<group>"; };
+		2376C8B32C2CC1B900D990F8 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		23C5E4992C04CDC700A76759 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage + Extension.swift"; sourceTree = "<group>"; };
 		23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer +Extension.swift"; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				2376C85D2C1A6FE700D990F8 /* MapView.swift */,
+				2376C8B32C2CC1B900D990F8 /* UserDetailsView.swift */,
 				2376C8AF2C29CA1D00D990F8 /* MapButtons.swift */,
 			);
 			path = Views;
@@ -384,6 +387,7 @@
 				235124532C011A080005D8C9 /* FeedCell.swift in Sources */,
 				235124312C0105A30005D8C9 /* ContentView.swift in Sources */,
 				2376C8B02C29CA1D00D990F8 /* MapButtons.swift in Sources */,
+				2376C8B42C2CC1B900D990F8 /* UserDetailsView.swift in Sources */,
 				2351246E2C0220150005D8C9 /* FeedViewModel.swift in Sources */,
 				235124682C021FA80005D8C9 /* Post.swift in Sources */,
 				2376C85E2C1A6FE700D990F8 /* MapView.swift in Sources */,

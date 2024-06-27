@@ -23,7 +23,7 @@ struct MapButtons: View {
                 }
                 .tint(.black)
                 .labelStyle(.iconOnly)
-                .foregroundStyle(.red)
+                .foregroundStyle(.orange)
                 .font(.system(size: 18))
             }
             Spacer()
