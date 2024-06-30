@@ -11,7 +11,7 @@ import UIKit
 class FeedViewModel: ObservableObject {
     @Published var posts = [Post]()
     
-    let video = UIImage(named: "video1")
+//    let video = UIImage(named: "video1")
     let videoUrls = [
         "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
         "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",

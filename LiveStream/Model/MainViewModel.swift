@@ -14,7 +14,7 @@ struct MainViewModel {
 
 struct Users: Codable, Identifiable {
     
-    let id: Int?
+    var id: Int?
     let name, username: String?
     let address: Address?
     
@@ -38,4 +38,10 @@ struct Address: Codable {
 
 struct Geo: Codable {
     let lat, lng: String?
+}
+
+struct Messages: Identifiable, Equatable {
+    let id = UUID()
+    var username: String
+    var content: String
 }

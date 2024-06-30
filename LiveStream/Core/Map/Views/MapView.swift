@@ -42,11 +42,12 @@ struct MapView: View {
             .mapStyle(.hybrid(elevation: .realistic))
             .sheet(isPresented: $bottomSheetShown, content: {
                 UserDetailsView(users: $selectedUser)
-                    .presentationDetents([.medium])
+                    .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.visible)
+                    .padding()
             })
             
-            MapButtons(cameraPosition: $cameraPosition,
+            MapButtons(cameraPosition:  $cameraPosition,
                        locationManager: locationManager)
         }
         .onAppear {

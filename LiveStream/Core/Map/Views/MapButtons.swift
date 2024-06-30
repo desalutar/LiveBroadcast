@@ -19,7 +19,7 @@ struct MapButtons: View {
                 Spacer()
                 LocationButton(.sendCurrentLocation) {
                     locationManager.requestLocation()
-                    cameraPosition = .userLocation(followsHeading: true, fallback: .camera(MapCamera(centerCoordinate: locationManager.currentCoordinate ?? .moscowCity, distance: 0.2)))
+                    cameraPosition = .userLocation(followsHeading: true, fallback: .camera(MapCamera(centerCoordinate: locationManager.currentCoordinate ?? .moscowCity, distance: 34538979)))
                 }
                 .tint(.black)
                 .labelStyle(.iconOnly)
