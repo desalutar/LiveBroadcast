@@ -9,6 +9,8 @@ import SwiftUI
 
 struct UserDetailsView: View {
     @Binding var users: Users?
+    @Binding var changeScreen: Int
+    @Binding var showingSheet: Bool
     @StateObject var locationManager = LocationManager()
     
     var body: some View {
@@ -31,7 +33,9 @@ struct UserDetailsView: View {
                 }
                 
                 Button {
-                    // action for watch broadcast
+                    changeScreen = 1
+                    showingSheet = false
+                    print(users?.name)
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20)
@@ -56,7 +60,7 @@ struct UserDetailsView: View {
             }
             .padding(.top, 30)
             .onAppear {
-                locationManager.fetchLocationName(for: 
+                locationManager.fetchLocationName(for:
                                                     users?.coordinate ?? .moscowCity)
             }
         }

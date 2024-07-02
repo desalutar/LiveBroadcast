@@ -13,7 +13,7 @@ struct MainTabView: View {
     @State private var viewModel = ViewModel()
     var body: some View {
         TabView(selection: $selectedTab) {
-            MapView()
+            MapView(changeScreen: $selectedTab)
                 .tabItem {
                     VStack {
                         Image(systemName: selectedTab == 0 ? "globe" : "globe")

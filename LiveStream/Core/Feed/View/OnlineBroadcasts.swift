@@ -51,7 +51,7 @@ struct OnlineBroadcasts: View {
         player.replaceCurrentItem(with: playerItem)
     }
 }
-
-#Preview {
-    OnlineBroadcasts()
-}
+//
+//#Preview {
+//    OnlineBroadcasts()
+//}

@@ -26,12 +26,12 @@ struct UsersInfoView: View {
             isShowUsersInfo = true
         }
         .sheet(isPresented: $isShowUsersInfo, content: {
-            UserDetailsView(users: $selectedUser)
+//            UserDetailsView(users: $selectedUser)
         })
     }
 }
 
-#Preview {
-    UsersInfoView()
-}
+//#Preview {
+//    UsersInfoView()
+//}
 

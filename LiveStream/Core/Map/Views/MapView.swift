@@ -10,6 +10,7 @@ import MapKit
 import _CoreLocationUI_SwiftUI
 
 struct MapView: View {
+    @Binding var changeScreen: Int
     @ObservedObject private var locationManager = LocationManager()
     @StateObject private var networkManager = NetworkManager()
     @State private var bottomSheetShown = false
@@ -41,7 +42,10 @@ struct MapView: View {
             .mapControlVisibility(.hidden)
             .mapStyle(.hybrid(elevation: .realistic))
             .sheet(isPresented: $bottomSheetShown, content: {
-                UserDetailsView(users: $selectedUser)
+                UserDetailsView(users: $selectedUser, 
+                                changeScreen: $changeScreen,
+                                showingSheet: $bottomSheetShown)
+                
                     .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.visible)
                     .padding()
@@ -65,7 +69,7 @@ extension CLLocationCoordinate2D {
     )
 }
 
-#Preview {
-    MapView()
-}
+//#Preview {
+//    MapView(selectedTab: )
+//}
 
