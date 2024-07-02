@@ -27,7 +27,7 @@
 		2376C85E2C1A6FE700D990F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C85D2C1A6FE700D990F8 /* MapView.swift */; };
 		2376C8642C1B106300D990F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8632C1B106300D990F8 /* LocationManager.swift */; };
 		2376C86E2C23200F00D990F8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C86D2C23200F00D990F8 /* NetworkManager.swift */; };
-		2376C8B02C29CA1D00D990F8 /* MapButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8AF2C29CA1D00D990F8 /* MapButtons.swift */; };
+		2376C8B02C29CA1D00D990F8 /* DisplayYourGeolocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8AF2C29CA1D00D990F8 /* DisplayYourGeolocation.swift */; };
 		2376C8B42C2CC1B900D990F8 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8B32C2CC1B900D990F8 /* UserDetailsView.swift */; };
 		2376C8D62C3174CB00D990F8 /* SendMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8D52C3174CB00D990F8 /* SendMessageView.swift */; };
 		2376C8D82C31D89600D990F8 /* UsersInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8D72C31D89600D990F8 /* UsersInfoView.swift */; };
@@ -62,7 +62,7 @@
 		2376C8632C1B106300D990F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2376C8652C1B2CF500D990F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2376C86D2C23200F00D990F8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		2376C8AF2C29CA1D00D990F8 /* MapButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButtons.swift; sourceTree = "<group>"; };
+		2376C8AF2C29CA1D00D990F8 /* DisplayYourGeolocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayYourGeolocation.swift; sourceTree = "<group>"; };
 		2376C8B32C2CC1B900D990F8 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		2376C8D52C3174CB00D990F8 /* SendMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageView.swift; sourceTree = "<group>"; };
 		2376C8D72C31D89600D990F8 /* UsersInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInfoView.swift; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 			children = (
 				2376C85D2C1A6FE700D990F8 /* MapView.swift */,
 				2376C8B32C2CC1B900D990F8 /* UserDetailsView.swift */,
-				2376C8AF2C29CA1D00D990F8 /* MapButtons.swift */,
+				2376C8AF2C29CA1D00D990F8 /* DisplayYourGeolocation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,7 +384,7 @@
 				2351245F2C0136330005D8C9 /* ProfileHeaderView.swift in Sources */,
 				235124532C011A080005D8C9 /* FeedCell.swift in Sources */,
 				235124312C0105A30005D8C9 /* ContentView.swift in Sources */,
-				2376C8B02C29CA1D00D990F8 /* MapButtons.swift in Sources */,
+				2376C8B02C29CA1D00D990F8 /* DisplayYourGeolocation.swift in Sources */,
 				2376C8B42C2CC1B900D990F8 /* UserDetailsView.swift in Sources */,
 				2351246E2C0220150005D8C9 /* FeedViewModel.swift in Sources */,
 				235124682C021FA80005D8C9 /* Post.swift in Sources */,

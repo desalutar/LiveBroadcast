@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 import _CoreLocationUI_SwiftUI
 
-struct MapButtons: View {
+struct DisplayYourGeolocation: View {
     @Binding var cameraPosition: MapCameraPosition
     @ObservedObject var locationManager: LocationManager
     

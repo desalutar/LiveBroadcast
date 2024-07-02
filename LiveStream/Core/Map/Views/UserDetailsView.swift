@@ -35,7 +35,6 @@ struct UserDetailsView: View {
                 Button {
                     changeScreen = 1
                     showingSheet = false
-                    print(users?.name)
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20)

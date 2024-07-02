@@ -51,7 +51,7 @@ struct MapView: View {
                     .padding()
             })
             
-            MapButtons(cameraPosition:  $cameraPosition,
+            DisplayYourGeolocation(cameraPosition:  $cameraPosition,
                        locationManager: locationManager)
         }
         .onAppear {
