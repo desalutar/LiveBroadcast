@@ -16,48 +16,9 @@ struct UserDetailsView: View {
     var body: some View {
         ScrollView {
             VStack {
-                HStack {
-                    Image(systemName: "person")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                        .padding(.leading, 30)
-                    
-                    VStack(alignment: .listRowSeparatorLeading) {
-                        Text(users?.name ?? "nil")
-                            .font(.headline)
-                        
-                        Text(locationManager.locationName)
-                    }
-                    .padding(.leading, 20)
-                    Spacer()
-                }
-                
-                Button {
-                    selectedUser.selectedTab = 1
-                    showingSheet = false
-                    if let user = users {
-                        selectedUser.selectedUser.append(user)
-                    }
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20)
-                            .foregroundStyle(.orange)
-                            .frame(width: 350, height: 52)
-                        Text("Live")
-                            .font(.system(size: 25))
-                            .tint(.black)
-                    }
-                }
-                .padding(.top, 30)
-                
-                HStack(spacing: 50) {
-                    UserStatView(value: 1, title: "Following")
-                    UserStatView(value: 1, title: "Likes")
-                    UserStatView(value: 1, title: "Followers")
-                }
-                .padding(.top, 15)
-                .padding(.bottom, 15)
-                
+                userInfoItem
+                openUserBroadcast
+                userStatView
                 DetailUsersPostGridView()
             }
             .padding(.top, 30)
@@ -67,6 +28,54 @@ struct UserDetailsView: View {
             }
         }
         .scrollIndicators(.hidden)
+    }
+    
+    var userInfoItem: some View {
+        HStack {
+            Image(systemName: "person")
+                .resizable()
+                .frame(width: 50, height: 50)
+                .padding(.leading, 30)
+            
+            VStack(alignment: .listRowSeparatorLeading) {
+                Text(users?.name ?? "Ishkhan")
+                    .font(.headline)
+                
+                Text(locationManager.locationName)
+            }
+            .padding(.leading, 20)
+            Spacer()
+        }
+    }
+    
+    var openUserBroadcast: some View {
+        Button {
+            selectedUser.selectedTab = 1
+            showingSheet = false
+            if let user = users {
+                selectedUser.selectedUser.append(user)
+            }
+        } label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundStyle(.orange)
+                    .frame(width: 350, height: 52)
+                Text("Live")
+                    .font(.system(size: 25))
+                    .tint(.black)
+            }
+        }
+        .padding(.top, 30)
+    }
+    
+    var userStatView: some View {
+        HStack(spacing: 50) {
+            UserStatView(value: 1, title: "Following")
+            UserStatView(value: 1, title: "Likes")
+            UserStatView(value: 1, title: "Followers")
+        }
+        .padding(.top, 15)
+        .padding(.bottom, 15)
     }
 }
 

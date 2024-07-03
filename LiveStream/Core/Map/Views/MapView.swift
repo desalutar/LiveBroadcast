@@ -40,14 +40,13 @@ struct MapView: View {
             }
             .mapControlVisibility(.hidden)
             .mapStyle(.hybrid(elevation: .realistic))
-            .sheet(isPresented: $bottomSheetShown, content: {
+            .sheet(isPresented: $bottomSheetShown) {
                 UserDetailsView(users: $selectedUser,
                                 showingSheet: $bottomSheetShown)
-                
                     .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.visible)
                     .padding()
-            })
+            }
             
             DisplayYourGeolocation(cameraPosition:  $cameraPosition,
                                    locationManager: locationManager)
