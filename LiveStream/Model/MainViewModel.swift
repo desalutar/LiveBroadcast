@@ -12,6 +12,11 @@ struct MainViewModel {
     var usersCount = [Users]()
 }
 
+class UserSessionManager: ObservableObject {
+    @Published var selectedUser: [Users] = []
+    @Published var selectedTab = 0
+}
+
 struct Users: Codable, Identifiable {
     
     var id: Int?

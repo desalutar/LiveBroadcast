@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct UsersInfoView: View {
+    @EnvironmentObject var selectedUser: UserSessionManager
     @State private var isShowUsersInfo = false
-    @State private var selectedUser: Users?
     var body: some View {
         HStack {
             Spacer()
@@ -26,7 +26,7 @@ struct UsersInfoView: View {
             isShowUsersInfo = true
         }
         .sheet(isPresented: $isShowUsersInfo, content: {
-//            UserDetailsView(users: $selectedUser)
+            Text(selectedUser.selectedUser.last?.name ?? "")
         })
     }
 }

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct UserDetailsView: View {
+    @EnvironmentObject var selectedUser: UserSessionManager
     @Binding var users: Users?
-    @Binding var changeScreen: Int
     @Binding var showingSheet: Bool
     @StateObject var locationManager = LocationManager()
     
@@ -33,8 +33,11 @@ struct UserDetailsView: View {
                 }
                 
                 Button {
-                    changeScreen = 1
+                    selectedUser.selectedTab = 1
                     showingSheet = false
+                    if let user = users {
+                        selectedUser.selectedUser.append(user)
+                    }
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20)
@@ -76,7 +79,7 @@ struct DetailUsersPostGridView: View {
     var body: some View {
         LazyVGrid(columns: items, spacing: 2){
             ForEach(0..<9) { post in
-                Image("testimg")
+                Image("testImg")
                     .resizable()
                     .frame(width: 120, height: 150)
                     .clipped()

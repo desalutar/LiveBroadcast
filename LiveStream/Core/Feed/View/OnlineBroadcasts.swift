@@ -12,6 +12,7 @@ struct OnlineBroadcasts: View {
     @StateObject var viewModel = FeedViewModel()
     @State private var scrollPosition: String?
     @State private var player = AVPlayer()
+    @State private var selectedUser: Users?
     
     var body: some View {
         ScrollView(showsIndicators: false) {

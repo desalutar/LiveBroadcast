@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct LiveStreamApp: App {
+    let selectedUser = UserSessionManager()
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            MainTabView().environmentObject(selectedUser)
         }
     }
 }

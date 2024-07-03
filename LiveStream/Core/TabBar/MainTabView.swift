@@ -9,16 +9,15 @@ import SwiftUI
 import UIKit
 
 struct MainTabView: View {
+    @EnvironmentObject var appState: UserSessionManager
     @State private var selectedTab = 0
     @State private var viewModel = ViewModel()
     var body: some View {
-        TabView(selection: $selectedTab) {
-            MapView(changeScreen: $selectedTab)
+        TabView(selection: $appState.selectedTab) {
+            MapView()
                 .tabItem {
                     VStack {
-                        Image(systemName: selectedTab == 0 ? "globe" : "globe")
-                            .environment(\.symbolVariants, 
-                                          selectedTab == 0 ? .fill : .none)
+                        Image(systemName: "globe")
                         Text("Map")
                     }
                 }
@@ -80,5 +79,6 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
+        .environmentObject(UserSessionManager())
         .preferredColorScheme(.dark)
 }
