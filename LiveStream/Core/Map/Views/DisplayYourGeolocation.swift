@@ -18,8 +18,8 @@ struct DisplayYourGeolocation: View {
             HStack {
                 Spacer()
                 LocationButton(.sendCurrentLocation) {
-                    locationManager.requestLocation()
                     cameraPosition = .userLocation(followsHeading: true, fallback: .camera(MapCamera(centerCoordinate: locationManager.currentCoordinate ?? .moscowCity, distance: 34538979)))
+                    locationManager.requestLocation()
                 }
                 .tint(.black)
                 .labelStyle(.iconOnly)
