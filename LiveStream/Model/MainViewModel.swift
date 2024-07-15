@@ -23,6 +23,7 @@ struct Users: Codable, Identifiable {
     let name, username: String?
     let address: Address?
     
+    
     var userLatitude: Double?
     var userLongitude: Double?
     
@@ -49,4 +50,10 @@ struct Messages: Identifiable, Equatable {
     let id = UUID()
     var username: String
     var content: String
+}
+
+struct UsersStats: Codable {
+    var followersCount: String
+    var followingCount: String
+    var likesCount: String
 }

@@ -44,7 +44,7 @@ struct SendMessageView: View {
             .textFieldStyle(RoundedBorderTextFieldStyle())
             
             Button(action: {
-                let newMessage = Messages(username: "Current User", content: text)
+                let newMessage = Messages(username: "you", content: text)
                 messages.append(newMessage)
                 text = ""
             }) {

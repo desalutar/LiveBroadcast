@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		231F48612C4404A300C5C676 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F48602C4404A300C5C676 /* AuthorizationView.swift */; };
 		2351242F2C0105A30005D8C9 /* LiveStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351242E2C0105A30005D8C9 /* LiveStreamApp.swift */; };
 		235124312C0105A30005D8C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235124302C0105A30005D8C9 /* ContentView.swift */; };
 		235124332C0105A50005D8C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235124322C0105A50005D8C9 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		231F48602C4404A300C5C676 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		2351242B2C0105A30005D8C9 /* LiveStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2351242E2C0105A30005D8C9 /* LiveStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamApp.swift; sourceTree = "<group>"; };
 		235124302C0105A30005D8C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		231F485F2C44045F00C5C676 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				231F48602C4404A300C5C676 /* AuthorizationView.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
 		235124222C0105A30005D8C9 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +145,7 @@
 		235124422C01091D0005D8C9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				231F485F2C44045F00C5C676 /* Authorization */,
 				2351244B2C0109A20005D8C9 /* Components  */,
 				2376C86C2C2236F400D990F8 /* CoreLocation */,
 				23C5E49E2C04CDC700A76759 /* CreateBroadcast */,
@@ -382,6 +393,7 @@
 				2351245B2C01322C0005D8C9 /* NotificationCell.swift in Sources */,
 				23C5E4A22C04CDC700A76759 /* BroadcastView.swift in Sources */,
 				2351245F2C0136330005D8C9 /* ProfileHeaderView.swift in Sources */,
+				231F48612C4404A300C5C676 /* AuthorizationView.swift in Sources */,
 				235124532C011A080005D8C9 /* FeedCell.swift in Sources */,
 				235124312C0105A30005D8C9 /* ContentView.swift in Sources */,
 				2376C8B02C29CA1D00D990F8 /* DisplayYourGeolocation.swift in Sources */,
