@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct AuthorizationView: View {
+    @EnvironmentObject var appState: UserSessionManager
     @State private var isAuth = true
     @State private var login = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @State private var user: User?
+    
+    @State private var isShowMapView = false
     var body: some View {
         VStack(spacing: 13) {
             authText
@@ -29,6 +33,9 @@ struct AuthorizationView: View {
         .padding(.bottom, 70)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .animation(Animation.linear(duration: 0.3), value: isAuth)
+        .fullScreenCover(isPresented: $isShowMapView) {
+            MainTabView(appState: _appState)
+        }
     }
     
     var authText: some View {
@@ -65,7 +72,7 @@ struct AuthorizationView: View {
             .padding(.horizontal, 12)
             
             if !isAuth {
-                SecureField(text: $password) {
+                SecureField(text: $confirmPassword) {
                     Text("Confirm password")
                         .foregroundStyle(.black)
                 }
@@ -82,7 +89,24 @@ struct AuthorizationView: View {
     var authButtons: some View {
         VStack {
             Button {
-                //
+                if isAuth {
+                    Task {
+                        do {
+                            self.user = try await AuthNetworkService.shared.auth(username: login,
+                                                               password: password)
+                            print(user?.name ?? "nil")
+    //                        isShowMapView.toggle()
+                        } catch {
+                            print("Ошибка: \(error.localizedDescription)")
+                        }
+                    }
+                } else {
+                    print("sign up user")
+                    self.login = ""
+                    self.password = ""
+                    self.confirmPassword = ""
+                    self.isAuth.toggle()
+                }
             } label: {
                 Text(isAuth ? "Sign in" : "Create account")
                     .padding()

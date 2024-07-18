@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		231F48612C4404A300C5C676 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F48602C4404A300C5C676 /* AuthorizationView.swift */; };
+		231F48632C4554A200C5C676 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */; };
 		2351242F2C0105A30005D8C9 /* LiveStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351242E2C0105A30005D8C9 /* LiveStreamApp.swift */; };
 		235124312C0105A30005D8C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235124302C0105A30005D8C9 /* ContentView.swift */; };
 		235124332C0105A50005D8C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235124322C0105A50005D8C9 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		2376C8B42C2CC1B900D990F8 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8B32C2CC1B900D990F8 /* UserDetailsView.swift */; };
 		2376C8D62C3174CB00D990F8 /* SendMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8D52C3174CB00D990F8 /* SendMessageView.swift */; };
 		2376C8D82C31D89600D990F8 /* UsersInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8D72C31D89600D990F8 /* UsersInfoView.swift */; };
+		23826D4C2C47D35E005F2180 /* AuthNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23826D4B2C47D35E005F2180 /* AuthNetworkService.swift */; };
 		23C5E49F2C04CDC700A76759 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E4992C04CDC700A76759 /* CameraManager.swift */; };
 		23C5E4A02C04CDC700A76759 /* CIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */; };
 		23C5E4A12C04CDC700A76759 /* CMSampleBuffer +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */; };
@@ -42,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		231F48602C4404A300C5C676 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
+		231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		2351242B2C0105A30005D8C9 /* LiveStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2351242E2C0105A30005D8C9 /* LiveStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamApp.swift; sourceTree = "<group>"; };
 		235124302C0105A30005D8C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 		2376C8B32C2CC1B900D990F8 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		2376C8D52C3174CB00D990F8 /* SendMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageView.swift; sourceTree = "<group>"; };
 		2376C8D72C31D89600D990F8 /* UsersInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInfoView.swift; sourceTree = "<group>"; };
+		23826D4B2C47D35E005F2180 /* AuthNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkService.swift; sourceTree = "<group>"; };
 		23C5E4992C04CDC700A76759 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage + Extension.swift"; sourceTree = "<group>"; };
 		23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer +Extension.swift"; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				231F48602C4404A300C5C676 /* AuthorizationView.swift */,
+				231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */,
+				23826D4B2C47D35E005F2180 /* AuthNetworkService.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -410,8 +416,10 @@
 				2376C86E2C23200F00D990F8 /* NetworkManager.swift in Sources */,
 				235124612C01363E0005D8C9 /* PostGridView.swift in Sources */,
 				23C5E4A02C04CDC700A76759 /* CIImage + Extension.swift in Sources */,
+				23826D4C2C47D35E005F2180 /* AuthNetworkService.swift in Sources */,
 				2351245D2C0135920005D8C9 /* CurrentUserProfileView.swift in Sources */,
 				23F8C9B92C0757C9006DAB2A /* BroadcastButtons.swift in Sources */,
+				231F48632C4554A200C5C676 /* AuthorizationViewModel.swift in Sources */,
 				23C5E4A12C04CDC700A76759 /* CMSampleBuffer +Extension.swift in Sources */,
 				2376C8642C1B106300D990F8 /* LocationManager.swift in Sources */,
 				235124592C01321E0005D8C9 /* NotificationsView.swift in Sources */,

@@ -9,20 +9,21 @@ import Foundation
 import CoreLocation
 
 struct MainViewModel {
-    var usersCount = [Users]()
+    var usersCount = [User]()
 }
 
 class UserSessionManager: ObservableObject {
-    @Published var selectedUser: [Users] = []
+    @Published var selectedUser: [User] = []
     @Published var selectedTab = 0
 }
 
-struct Users: Codable, Identifiable {
+struct User: Codable, Identifiable {
     
-    var id: Int?
-    let name, username: String?
+    var id: String
+    let name: String
+    let username: String
+    let lastName: String
     let address: Address?
-    
     
     var userLatitude: Double?
     var userLongitude: Double?

@@ -13,7 +13,7 @@ struct MapView: View {
     @ObservedObject private var locationManager = LocationManager()
     @StateObject private var networkManager = NetworkManager()
     @State private var bottomSheetShown = false
-    @State private var selectedUser: Users?
+    @State private var selectedUser: User?
     @State private var cameraPosition: MapCameraPosition = .userLocation(
         followsHeading: true,
         fallback: .camera(MapCamera(
@@ -26,7 +26,7 @@ struct MapView: View {
         ZStack {
             Map(position: $cameraPosition) {
                 ForEach(networkManager.users) { user in
-                    Annotation(user.name ?? "",
+                    Annotation(user.name,
                                coordinate: user.coordinate ?? .moscowCity) {
                         ZStack {
                             Image(systemName: "person")
@@ -54,6 +54,7 @@ struct MapView: View {
         .onAppear {
             locationManager.requestLocation()
             networkManager.start()
+            print(selectedUser?.name ?? "nil")
         }
     }
 }

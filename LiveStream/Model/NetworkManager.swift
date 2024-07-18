@@ -14,7 +14,7 @@ enum Errors: String, Error {
 }
 
 class NetworkManager: ObservableObject {
-    @Published var users: [Users] = []
+    @Published var users: [User] = []
     private var timer: AnyCancellable?
     
     init() {
@@ -40,7 +40,7 @@ class NetworkManager: ObservableObject {
                 return
             }
             do {
-                let fetch = try JSONDecoder().decode([Users].self, from: data)
+                let fetch = try JSONDecoder().decode([User].self, from: data)
                 DispatchQueue.main.async {
                     self.users = fetch
                 }

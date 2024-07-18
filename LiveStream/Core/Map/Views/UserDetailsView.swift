@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserDetailsView: View {
     @EnvironmentObject var selectedUser: UserSessionManager
-    @Binding var users: Users?
+    @Binding var users: User?
     @Binding var showingSheet: Bool
     @StateObject var locationManager = LocationManager()
     
