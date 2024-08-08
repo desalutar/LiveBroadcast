@@ -11,7 +11,6 @@ import Security
 class AuthNetworkService {
     static let shared = AuthNetworkService()
     private init() {}
-
     
     func auth(username: String, password: String) async throws -> User {
         let userRequestBody = UserRequestBody(username: username, password: password)
