@@ -34,6 +34,8 @@
 		2376C8D62C3174CB00D990F8 /* SendMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8D52C3174CB00D990F8 /* SendMessageView.swift */; };
 		2376C8D82C31D89600D990F8 /* UsersInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8D72C31D89600D990F8 /* UsersInfoView.swift */; };
 		23826D4C2C47D35E005F2180 /* AuthNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23826D4B2C47D35E005F2180 /* AuthNetworkService.swift */; };
+		2395AC512C64FCE300790B90 /* URLSessionPinningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2395AC502C64FCE300790B90 /* URLSessionPinningDelegate.swift */; };
+		2395AC552C652B4C00790B90 /* certificate.der in Resources */ = {isa = PBXBuildFile; fileRef = 2395AC542C652B4C00790B90 /* certificate.der */; };
 		23C5E49F2C04CDC700A76759 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E4992C04CDC700A76759 /* CameraManager.swift */; };
 		23C5E4A02C04CDC700A76759 /* CIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */; };
 		23C5E4A12C04CDC700A76759 /* CMSampleBuffer +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */; };
@@ -72,6 +74,8 @@
 		2376C8D52C3174CB00D990F8 /* SendMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageView.swift; sourceTree = "<group>"; };
 		2376C8D72C31D89600D990F8 /* UsersInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersInfoView.swift; sourceTree = "<group>"; };
 		23826D4B2C47D35E005F2180 /* AuthNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkService.swift; sourceTree = "<group>"; };
+		2395AC502C64FCE300790B90 /* URLSessionPinningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionPinningDelegate.swift; sourceTree = "<group>"; };
+		2395AC542C652B4C00790B90 /* certificate.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.der; sourceTree = "<group>"; };
 		23C5E4992C04CDC700A76759 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		23C5E49A2C04CDC700A76759 /* CIImage + Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CIImage + Extension.swift"; sourceTree = "<group>"; };
 		23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer +Extension.swift"; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				231F48602C4404A300C5C676 /* AuthorizationView.swift */,
 				231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */,
 				23826D4B2C47D35E005F2180 /* AuthNetworkService.swift */,
+				2395AC502C64FCE300790B90 /* URLSessionPinningDelegate.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 		2351242D2C0105A30005D8C9 /* LiveStream */ = {
 			isa = PBXGroup;
 			children = (
+				2395AC542C652B4C00790B90 /* certificate.der */,
 				2376C8652C1B2CF500D990F8 /* Info.plist */,
 				235124432C01091F0005D8C9 /* App */,
 				235124422C01091D0005D8C9 /* Core */,
@@ -383,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				235124362C0105A50005D8C9 /* Preview Assets.xcassets in Resources */,
+				2395AC552C652B4C00790B90 /* certificate.der in Resources */,
 				235124332C0105A50005D8C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +432,7 @@
 				235124592C01321E0005D8C9 /* NotificationsView.swift in Sources */,
 				2376C85C2C1A6EB900D990F8 /* MainViewModel.swift in Sources */,
 				23C5E49F2C04CDC700A76759 /* CameraManager.swift in Sources */,
+				2395AC512C64FCE300790B90 /* URLSessionPinningDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,15 +575,16 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Show the iser location";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.FaceDetectionSystem.LiveStream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -601,15 +610,16 @@
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Show the iser location";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.FaceDetectionSystem.LiveStream;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

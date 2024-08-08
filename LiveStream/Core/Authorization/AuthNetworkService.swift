@@ -6,18 +6,21 @@
 //
 
 import Foundation
+import Security
 
 class AuthNetworkService {
     static let shared = AuthNetworkService()
     private init() {}
-    
-    private let localhost = "http://127.0.0.1:8080"
+
     
     func auth(username: String, password: String) async throws -> User {
         let userRequestBody = UserRequestBody(username: username, password: password)
-        guard let url = URL(string: "\(localhost)\(ApiMethod.auth.rawValue)") else {
+        guard let url = URL(string: "\(host)\(ApiMethod.auth.rawValue)") else {
             throw NetworkErrors.dabURL
         }
+        
+        let configuration = URLSessionConfiguration.ephemeral
+        let session = URLSession(configuration: configuration, delegate: URLSessionPinningDelegate(), delegateQueue: nil)
         
         var request = URLRequest(url: url)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -26,7 +29,7 @@ class AuthNetworkService {
         let encoderData = try JSONEncoder().encode(userRequestBody)
         request.httpBody = encoderData
         
-        let (data, userResponse) = try await URLSession.shared.data(for: request)
+        let (data, userResponse) = try await session.data(for: request)
         
         if let httpResponse = userResponse as? HTTPURLResponse {
             print("Статус-код ответа: \(httpResponse.statusCode)")

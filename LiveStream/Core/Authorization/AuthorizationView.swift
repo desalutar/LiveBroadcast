@@ -14,8 +14,8 @@ struct AuthorizationView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var user: User?
-    
     @State private var isShowMapView = false
+    
     var body: some View {
         VStack(spacing: 13) {
             authText
@@ -92,10 +92,12 @@ struct AuthorizationView: View {
                 if isAuth {
                     Task {
                         do {
-                            self.user = try await AuthNetworkService.shared.auth(username: login,
-                                                               password: password)
-                            print(user?.name ?? "nil")
-    //                        isShowMapView.toggle()
+//                            self.user = try await AuthNetworkService.shared.auth(username: login,
+//                                                               password: password)
+                            self.user = try await AuthNetworkService.shared.auth(username: login, password: password)
+                            guard let user else { return }
+                            appState.selectedUser.append(user)
+                            isShowMapView.toggle()
                         } catch {
                             print("Ошибка: \(error.localizedDescription)")
                         }
@@ -117,6 +119,9 @@ struct AuthorizationView: View {
                     .padding(.horizontal, 12)
                     .foregroundStyle(.black)
                     .font(.title3.bold())
+            }
+            .fullScreenCover(isPresented: $isShowMapView) {
+                MainTabView(appState: _appState)
             }
             
             Button {
