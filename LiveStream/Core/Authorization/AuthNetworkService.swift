@@ -8,9 +8,25 @@
 import Foundation
 import Security
 
+struct UserRequestBody: Encodable {
+    let username: String
+    var password: String
+}
+
+enum ApiMethod: String {
+    case auth = "/users/auth"
+}
+
+enum NetworkErrors: Error {
+    case dabURL
+    case serverError(statusCode: Int)
+    case decodingError
+}
+
 class AuthNetworkService {
     static let shared = AuthNetworkService()
     private init() {}
+    private let host = HostName.init().host
     
     func auth(username: String, password: String) async throws -> User {
         let userRequestBody = UserRequestBody(username: username, password: password)
@@ -48,17 +64,4 @@ class AuthNetworkService {
     }
 }
 
-struct UserRequestBody: Encodable {
-    let username: String
-    var password: String
-}
 
-enum ApiMethod: String {
-    case auth = "/users/auth"
-}
-
-enum NetworkErrors: Error {
-    case dabURL
-    case serverError(statusCode: Int)
-    case decodingError
-}

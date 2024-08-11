@@ -19,7 +19,7 @@ struct CurrentUserProfileView: View {
                 }
                 .padding(.top   )
             }
-            .navigationTitle("Profile")
+            .navigationTitle("username")
             .navigationBarTitleDisplayMode(.inline)
             
         }

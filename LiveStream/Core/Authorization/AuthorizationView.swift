@@ -92,11 +92,10 @@ struct AuthorizationView: View {
                 if isAuth {
                     Task {
                         do {
-//                            self.user = try await AuthNetworkService.shared.auth(username: login,
-//                                                               password: password)
                             self.user = try await AuthNetworkService.shared.auth(username: login, password: password)
                             guard let user else { return }
                             appState.selectedUser.append(user)
+                            print(user)
                             isShowMapView.toggle()
                         } catch {
                             print("Ошибка: \(error.localizedDescription)")
