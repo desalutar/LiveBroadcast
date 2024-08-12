@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		231F48612C4404A300C5C676 /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F48602C4404A300C5C676 /* AuthorizationView.swift */; };
 		231F48632C4554A200C5C676 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */; };
+		232FE0492C68BDBB009E9B79 /* HostName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232FE0482C68BDBB009E9B79 /* HostName.swift */; };
 		2351242F2C0105A30005D8C9 /* LiveStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351242E2C0105A30005D8C9 /* LiveStreamApp.swift */; };
 		235124312C0105A30005D8C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235124302C0105A30005D8C9 /* ContentView.swift */; };
 		235124332C0105A50005D8C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235124322C0105A50005D8C9 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		231F48602C4404A300C5C676 /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
 		231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
+		232FE0482C68BDBB009E9B79 /* HostName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostName.swift; sourceTree = "<group>"; };
 		2351242B2C0105A30005D8C9 /* LiveStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2351242E2C0105A30005D8C9 /* LiveStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamApp.swift; sourceTree = "<group>"; };
 		235124302C0105A30005D8C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				235124402C0109180005D8C9 /* Model */,
 				235124322C0105A50005D8C9 /* Assets.xcassets */,
 				235124342C0105A50005D8C9 /* Preview Content */,
+				232FE0482C68BDBB009E9B79 /* HostName.swift */,
 			);
 			path = LiveStream;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				2376C8B02C29CA1D00D990F8 /* DisplayYourGeolocation.swift in Sources */,
 				2376C8B42C2CC1B900D990F8 /* UserDetailsView.swift in Sources */,
 				2351246E2C0220150005D8C9 /* FeedViewModel.swift in Sources */,
+				232FE0492C68BDBB009E9B79 /* HostName.swift in Sources */,
 				235124682C021FA80005D8C9 /* Post.swift in Sources */,
 				2376C85E2C1A6FE700D990F8 /* MapView.swift in Sources */,
 				2351242F2C0105A30005D8C9 /* LiveStreamApp.swift in Sources */,

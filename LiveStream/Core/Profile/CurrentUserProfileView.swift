@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct CurrentUserProfileView: View {
+    @EnvironmentObject var appState: UserSessionManager
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 2) {
                      // profile header
                     ProfileHeaderView()
-                    // post grid view
+                    
                     PostGridView()
                 }
                 .padding(.top   )
             }
-            .navigationTitle("username")
+            .navigationTitle(appState.selectedUser.first?.username ?? "profile")
             .navigationBarTitleDisplayMode(.inline)
             
         }

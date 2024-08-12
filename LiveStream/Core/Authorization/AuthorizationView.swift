@@ -9,7 +9,10 @@ import SwiftUI
 
 struct AuthorizationView: View {
     @EnvironmentObject var appState: UserSessionManager
+//    @ObservedObject private var viewModel = AuthorizationViewModel()
     @State private var isAuth = true
+    @State private var name = ""
+    @State private var lastName = ""
     @State private var login = ""
     @State private var password = ""
     @State private var confirmPassword = ""
@@ -72,6 +75,28 @@ struct AuthorizationView: View {
             .padding(.horizontal, 12)
             
             if !isAuth {
+                TextField(text: $name)  {
+                    Text("Enter Name")
+                        .foregroundStyle(.black)
+                }
+                .padding()
+                .foregroundStyle(.black)
+                .background(.orange.opacity(0.7))
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+                .padding(8)
+                .padding(.horizontal, 12)
+                
+                TextField(text: $lastName)  {
+                    Text("Enter last name")
+                        .foregroundStyle(.black)
+                }
+                .padding()
+                .foregroundStyle(.black)
+                .background(.orange.opacity(0.7))
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+                .padding(8)
+                .padding(.horizontal, 12)
+                
                 SecureField(text: $confirmPassword) {
                     Text("Confirm password")
                         .foregroundStyle(.black)
@@ -95,6 +120,7 @@ struct AuthorizationView: View {
                             self.user = try await AuthNetworkService.shared.auth(username: login, password: password)
                             guard let user else { return }
                             appState.selectedUser.append(user)
+//                            try await viewModel.authUser()
                             print(user)
                             isShowMapView.toggle()
                         } catch {
@@ -119,9 +145,6 @@ struct AuthorizationView: View {
                     .foregroundStyle(.black)
                     .font(.title3.bold())
             }
-            .fullScreenCover(isPresented: $isShowMapView) {
-                MainTabView(appState: _appState)
-            }
             
             Button {
                 isAuth.toggle()
@@ -130,6 +153,10 @@ struct AuthorizationView: View {
                     .foregroundStyle(.orange)
             }
             .padding(.horizontal)
+            
+            .fullScreenCover(isPresented: $isShowMapView) {
+                MainTabView(appState: _appState)
+            }
         }
     }
 }
