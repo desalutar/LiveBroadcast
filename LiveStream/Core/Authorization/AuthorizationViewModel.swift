@@ -8,11 +8,28 @@
 import SwiftUI
 import Foundation
 
+//struct AuthParams {
+//    let username: String
+//    let password: String
+//    let name: String?
+//    let lastName: String?
+//}
+
 class AuthorizationViewModel: ObservableObject {
-    @Published private var user: User?
-    @Published private var userSessionManager: UserSessionManager?
+    @EnvironmentObject var appState: UserSessionManager
+    @Published var isAuth = true
+    @Published var user: User?
+    @Published var error: Error?
     
-    func authUser(username: String, password: String) async throws {
-        
+    let networkService = AuthRegistrationNetworkService.shared
+    
+    func createUser(by username: String, _ password: String, 
+                  _ name: String, _ lastName: String) async throws -> User {
+        try await networkService.performRequest(.create, username: username, password: password,
+                                                name: name, lastName: lastName)
+    }
+    
+    func authenticate(by username: String, and password: String) async throws -> User {
+        try await networkService.performRequest(.auth, username: username, password: password)
     }
 }

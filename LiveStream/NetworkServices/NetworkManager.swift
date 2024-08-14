@@ -45,7 +45,7 @@ class NetworkManager: ObservableObject {
                     self.users = fetch
                 }
             } catch {
-                print("Decoding error: \(error.localizedDescription)")
+                print("Decoding error: \(error.localizedDescription) эта ошибка получается в файле NetworkManager")
             }
         }.resume()
     }

@@ -8,37 +8,20 @@
 import Foundation
 import Security
 
-struct UserRequestBody: Encodable {
-    let username: String
+struct UserRequestBody: Codable {
+    var username: String
     var password: String
+    var name: String?
+    var lastName: String?
 }
 
 enum ApiMethod: String {
-    case auth = "/users/auth"
+    case auth = "/users/authUser"
+    case create = "/users/createUser"
 }
 
-enum NetworkErrors: Error, LocalizedError {
-    case invalidURL
-    case serverError(statusCode: Int)
-    case encodingError(String)
-    case decodingError(String)
-    
-    var errorDescription: String? {
-        switch self {
-        case .invalidURL:
-            return "Invalid URL"
-        case .serverError(let statusCode):
-            return "Server error with status code \(statusCode)"
-        case .encodingError(let message):
-                   return "Error encoding request: \(message)"
-        case .decodingError(let message):
-            return "Error decoding response: \(message)"
-        }
-    }
-}
-
-class AuthNetworkService {
-    static let shared = AuthNetworkService()
+class AuthRegistrationNetworkService {
+    static let shared = AuthRegistrationNetworkService()
     private init() {}
     private let host = HostName.init().host
     
@@ -57,15 +40,31 @@ class AuthNetworkService {
         }
     }
     
-    func auth(username: String, password: String) async throws -> User {
-        guard let url = URL(string: "\(HostName.init().host)\(ApiMethod.auth.rawValue)") else {
+    func performRequest(_ method: ApiMethod, username: String, password: String,
+                        name: String? = nil, lastName: String? = nil) async throws -> User {
+        guard let url = URL(string: "\(HostName.init().host)\(method.rawValue)") else {
             throw NetworkErrors.invalidURL
         }
         
-        let userRequestBody = UserRequestBody(username: username, password: password)
+        let userRequestBody: UserRequestBody
+        switch method {
+        case .auth:
+            userRequestBody = UserRequestBody(username: username,
+                                              password: password)
+        case .create:
+            guard let name = name,
+                  let lastName = lastName else {
+                throw NetworkErrors.invalidRequest
+            }
+            userRequestBody = UserRequestBody(username: username, password: password, 
+                                              name: name , lastName: lastName)
+        }
+        
         let request = try createRequest(from: userRequestBody, url: url)
-        let configuration = URLSessionConfiguration.ephemeral
-        let session = URLSession(configuration: configuration, delegate: URLSessionPinningDelegate(), delegateQueue: nil)
+        let configuration = URLSessionConfiguration.default
+        let session = URLSession(configuration: configuration, 
+                                 delegate: URLSessionPinningDelegate(),
+                                 delegateQueue: nil)
         
         let (data, response) = try await session.data(for: request)
         
@@ -80,6 +79,6 @@ class AuthNetworkService {
             throw NetworkErrors.decodingError(error.localizedDescription)
         }
     }
+
+    
 }
-
-
