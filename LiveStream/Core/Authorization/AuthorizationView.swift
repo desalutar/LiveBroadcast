@@ -11,8 +11,6 @@ struct AuthorizationView: View {
     @EnvironmentObject var appState: UserSessionManager
     @StateObject var viewModel = AuthorizationViewModel()
     @State private var user: User?
-//    @State private var isAuth = true
-    @State private var isShowMapView = false
     @State private var name = ""
     @State private var lastName = ""
     @State private var username = ""
@@ -36,7 +34,7 @@ struct AuthorizationView: View {
         .padding(.bottom, 70)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .animation(Animation.linear(duration: 0.3), value: viewModel.isAuth)
-        .fullScreenCover(isPresented: $isShowMapView) {
+        .fullScreenCover(isPresented: $viewModel.isShowMapView) {
             MainTabView(appState: _appState)
         }
     }
@@ -114,25 +112,22 @@ struct AuthorizationView: View {
     var authButtons: some View {
         VStack {
             Button {
-                if viewModel.isAuth {
-                    Task {
-                        do {
-                            self.user = try await viewModel.authenticate(by: username, and: password)
+                Task {
+                    do {
+                        switch viewModel.isAuth {
+                        case true:
+                            self.user = try await viewModel.authenticationUser(with: username, password)
                             guard let user else { return }
                             appState.selectedUser.append(user)
-                            print(user)
-                            isShowMapView.toggle()
-                        } catch {
-                            print("Ошибка: \(error.localizedDescription)")
+                            viewModel.isShowMapView.toggle()
+                        case false:
+                            self.user = try await viewModel.authenticationUser(with: username, password,
+                                                                                     name, lastName)
+                            viewModel.isAuth.toggle()
                         }
+                    } catch {
+                        print("Ошибка: \(error.localizedDescription)")
                     }
-                } else {
-                    Task {
-                        do {
-                            self.user = try await viewModel.createUser(by: username, password, name, lastName)
-                        }
-                    }
-                    self.viewModel.isAuth.toggle()
                 }
             } label: {
                 Text(viewModel.isAuth ? "Sign in" : "Create account")
@@ -154,7 +149,7 @@ struct AuthorizationView: View {
             }
             .padding(.horizontal)
             
-            .fullScreenCover(isPresented: $isShowMapView) {
+            .fullScreenCover(isPresented: $viewModel.isShowMapView) {
                 MainTabView(appState: _appState)
             }
         }
