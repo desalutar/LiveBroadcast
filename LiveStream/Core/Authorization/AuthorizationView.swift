@@ -33,7 +33,8 @@ struct AuthorizationView: View {
         }
         .padding(.bottom, 70)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .animation(Animation.linear(duration: 0.3), value: viewModel.isAuth)
+        .animation(Animation.linear(duration: 0.3), 
+                   value: viewModel.isAuth)
         .fullScreenCover(isPresented: $viewModel.isShowMapView) {
             MainTabView(appState: _appState)
         }
@@ -55,56 +56,27 @@ struct AuthorizationView: View {
                 Text("Enter login / username")
                     .foregroundStyle(.black)
             }
-            .padding()
-            .foregroundStyle(.black)
-            .background(.orange.opacity(0.7))
-            .clipShape(RoundedRectangle(cornerRadius: 15))
-            .padding(8)
-            .padding(.horizontal, 12)
+            .customTextFieldStyle()
             SecureField(text: $password) {
                 Text("Enter password")
                     .foregroundStyle(.black)
-            }
-            .padding()
-            .foregroundStyle(.black)
-            .background(.orange.opacity(0.7))
-            .clipShape(RoundedRectangle(cornerRadius: 15))
-            .padding(8)
-            .padding(.horizontal, 12)
+            }.customTextFieldStyle()
             
             if !viewModel.isAuth {
                 SecureField(text: $confirmPassword) {
                     Text("Confirm password")
                         .foregroundStyle(.black)
-                }
-                .padding()
-                .foregroundStyle(.black)
-                .background(.orange.opacity(0.7))
-                .clipShape(RoundedRectangle(cornerRadius: 15))
-                .padding(8)
-                .padding(.horizontal, 12)
+                }.customTextFieldStyle()
                 
                 TextField(text: $name)  {
                     Text("Enter Name")
                         .foregroundStyle(.black)
-                }
-                .padding()
-                .foregroundStyle(.black)
-                .background(.orange.opacity(0.7))
-                .clipShape(RoundedRectangle(cornerRadius: 15))
-                .padding(8)
-                .padding(.horizontal, 12)
+                }.customTextFieldStyle()
                 
                 TextField(text: $lastName)  {
                     Text("Enter last name")
                         .foregroundStyle(.black)
-                }
-                .padding()
-                .foregroundStyle(.black)
-                .background(.orange.opacity(0.7))
-                .clipShape(RoundedRectangle(cornerRadius: 15))
-                .padding(8)
-                .padding(.horizontal, 12)
+                }.customTextFieldStyle()
             }
         }
     }
@@ -121,8 +93,7 @@ struct AuthorizationView: View {
                             appState.selectedUser.append(user)
                             viewModel.isShowMapView.toggle()
                         case false:
-                            self.user = try await viewModel.authenticationUser(with: username, password,
-                                                                                     name, lastName)
+                            self.user = try await viewModel.authenticationUser(with:                            username, password,                           name, lastName)
                             viewModel.isAuth.toggle()
                         }
                     } catch {
@@ -131,14 +102,9 @@ struct AuthorizationView: View {
                 }
             } label: {
                 Text(viewModel.isAuth ? "Sign in" : "Create account")
-                    .padding()
                     .frame(maxWidth: .infinity)
-                    .background(.orange.opacity(0.7))
                     .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .padding(8)
-                    .padding(.horizontal, 12)
-                    .foregroundStyle(.black)
-                    .font(.title3.bold())
+                    .customTextFieldStyle()
             }
             
             Button {
@@ -146,8 +112,7 @@ struct AuthorizationView: View {
             } label: {
                 Text(viewModel.isAuth ? "Sign up" : "Sign in")
                     .foregroundStyle(.orange)
-            }
-            .padding(.horizontal)
+            }.padding(.horizontal)
             
             .fullScreenCover(isPresented: $viewModel.isShowMapView) {
                 MainTabView(appState: _appState)

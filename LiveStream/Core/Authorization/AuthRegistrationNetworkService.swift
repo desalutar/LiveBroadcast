@@ -16,8 +16,8 @@ struct UserRequestBody: Codable {
 }
 
 enum ApiMethod: String {
-    case auth = "/users/authUser"
-    case create = "/users/createUser"
+    case authUser = "/users/authUser"
+    case createUser = "/users/createUser"
 }
 
 class AuthRegistrationNetworkService {
@@ -40,18 +40,18 @@ class AuthRegistrationNetworkService {
         }
     }
     
-    func performRequest(_ method: ApiMethod, username: String, password: String,
-                        name: String? = nil, lastName: String? = nil) async throws -> User {
+    func performRequest(_ method: ApiMethod, with username: String, _ password: String,
+                        _ name: String? = nil, _ lastName: String? = nil) async throws -> User {
         guard let url = URL(string: "\(HostName.init().host)\(method.rawValue)") else {
             throw NetworkErrors.invalidURL
         }
         
         let userRequestBody: UserRequestBody
         switch method {
-        case .auth:
+        case .authUser:
             userRequestBody = UserRequestBody(username: username,
                                               password: password)
-        case .create:
+        case .createUser:
             guard let name = name,
                   let lastName = lastName else {
                 throw NetworkErrors.invalidRequest

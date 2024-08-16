@@ -20,10 +20,10 @@ class AuthorizationViewModel: ObservableObject {
                       _ name: String? = nil, _ lastName: String? = nil) async throws -> User {
         if let name = name,
            let lastName = lastName {
-            return try await networkService.performRequest(.create, username: username,
-                                                                password: password, name: name, lastName: lastName)
+            return try await networkService.performRequest(.createUser, with: username,
+                                                                password, name, lastName)
         } else {
-            return try await networkService.performRequest(.auth, username: username, password: password)
+            return try await networkService.performRequest(.authUser, with: username, password)
         }
     }
 }

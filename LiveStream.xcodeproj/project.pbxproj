@@ -11,6 +11,7 @@
 		231F48632C4554A200C5C676 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */; };
 		232FE0492C68BDBB009E9B79 /* HostName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232FE0482C68BDBB009E9B79 /* HostName.swift */; };
 		232FE04B2C6A24C0009E9B79 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232FE04A2C6A24C0009E9B79 /* NetworkErrors.swift */; };
+		234A0D432C6F329300205986 /* CustomTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A0D422C6F329300205986 /* CustomTextFieldModifier.swift */; };
 		2351242F2C0105A30005D8C9 /* LiveStreamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351242E2C0105A30005D8C9 /* LiveStreamApp.swift */; };
 		235124312C0105A30005D8C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235124302C0105A30005D8C9 /* ContentView.swift */; };
 		235124332C0105A50005D8C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235124322C0105A50005D8C9 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		232FE0482C68BDBB009E9B79 /* HostName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostName.swift; sourceTree = "<group>"; };
 		232FE04A2C6A24C0009E9B79 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		234A0D422C6F329300205986 /* CustomTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldModifier.swift; sourceTree = "<group>"; };
 		2351242B2C0105A30005D8C9 /* LiveStream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveStream.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2351242E2C0105A30005D8C9 /* LiveStreamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamApp.swift; sourceTree = "<group>"; };
 		235124302C0105A30005D8C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				231F48602C4404A300C5C676 /* AuthorizationView.swift */,
+				234A0D422C6F329300205986 /* CustomTextFieldModifier.swift */,
 				231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */,
 				23826D4B2C47D35E005F2180 /* AuthRegistrationNetworkService.swift */,
 				2395AC502C64FCE300790B90 /* URLSessionPinningDelegate.swift */,
@@ -222,7 +225,6 @@
 			children = (
 				235124622C0139500005D8C9 /* Components */,
 				235124642C01396E0005D8C9 /* View */,
-				2351245C2C0135920005D8C9 /* CurrentUserProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -267,6 +269,7 @@
 		235124642C01396E0005D8C9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2351245C2C0135920005D8C9 /* CurrentUserProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				235124512C0118540005D8C9 /* OnlineBroadcasts.swift in Sources */,
+				234A0D432C6F329300205986 /* CustomTextFieldModifier.swift in Sources */,
 				235124702C022F8E0005D8C9 /* CustomVideoPlayer.swift in Sources */,
 				2351245B2C01322C0005D8C9 /* NotificationCell.swift in Sources */,
 				23C5E4A22C04CDC700A76759 /* BroadcastView.swift in Sources */,
