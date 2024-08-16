@@ -11,11 +11,7 @@ struct AuthorizationView: View {
     @EnvironmentObject var appState: UserSessionManager
     @StateObject var viewModel = AuthorizationViewModel()
     @State private var user: User?
-    @State private var name = ""
-    @State private var lastName = ""
-    @State private var username = ""
-    @State private var password = ""
-    @State private var confirmPassword = ""
+    
     
     var body: some View {
         VStack(spacing: 13) {
@@ -52,16 +48,18 @@ struct AuthorizationView: View {
     
     var authFields: some View {
         VStack {
-            FormField(fieldName: "Enter login", fieldValue: $username, isSecure: false)
-            FormField(fieldName: "Enter password", fieldValue: $password, isSecure: true)
+            FormField(fieldName: "Enter login", 
+                      fieldValue: $viewModel.username, isSecure: false)
+            FormField(fieldName: "Enter password", 
+                      fieldValue: $viewModel.password, isSecure: true)
             
             if !viewModel.isAuth {
                 FormField(fieldName: "Confirm password", 
-                          fieldValue: $confirmPassword,isSecure: true)
+                          fieldValue: $viewModel.confirmPassword, isSecure: true)
                 FormField(fieldName: "Enter name",
-                          fieldValue: $name, isSecure: false)
-                FormField(fieldName: "Enter last name", 
-                          fieldValue: $lastName, isSecure: false)
+                          fieldValue: $viewModel.name, isSecure: false)
+                FormField(fieldName: "Enter last name",
+                          fieldValue: $viewModel.lastName, isSecure: false)
             }
         }
     }
@@ -69,22 +67,7 @@ struct AuthorizationView: View {
     var authButtons: some View {
         VStack {
             Button {
-                Task {
-                    do {
-                        switch viewModel.isAuth {
-                        case true:
-                            self.user = try await viewModel.authenticationUser(with: username, password)
-                            guard let user else { return }
-                            appState.selectedUser.append(user)
-                            viewModel.isShowMapView.toggle()
-                        case false:
-                            self.user = try await viewModel.authenticationUser(with:                            username, password,                           name, lastName)
-                            viewModel.isAuth.toggle()
-                        }
-                    } catch {
-                        print("Ошибка: \(error.localizedDescription)")
-                    }
-                }
+                performLogin()
             } label: {
                 Text(viewModel.isAuth ? "Sign in" : "Create account")
                     .frame(maxWidth: .infinity)
@@ -101,6 +84,25 @@ struct AuthorizationView: View {
             
             .fullScreenCover(isPresented: $viewModel.isShowMapView) {
                 MainTabView(appState: _appState)
+            }
+        }
+    }
+    
+    func performLogin() {
+        Task {
+            do {
+                switch viewModel.isAuth {
+                case true:
+                    self.user = try await viewModel.authenticationUser(with: viewModel.username, viewModel.password)
+                    guard let user else { return }
+                    appState.selectedUser.append(user)
+                    viewModel.isShowMapView.toggle()
+                case false:
+                    self.user = try await viewModel.authenticationUser(with:                            viewModel.username, viewModel.password, viewModel.name,  viewModel.lastName)
+                    viewModel.isAuth.toggle()
+                }
+            } catch {
+                print("Ошибка: \(error.localizedDescription)")
             }
         }
     }

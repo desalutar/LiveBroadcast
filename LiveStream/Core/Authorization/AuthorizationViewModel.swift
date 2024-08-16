@@ -13,6 +13,12 @@ class AuthorizationViewModel: ObservableObject {
     @Published var isAuth = true
     @Published var isShowMapView = false
     @Published var error: Error?
+    
+    @Published var name = ""
+    @Published var lastName = ""
+    @Published var username = ""
+    @Published var password = ""
+    @Published var confirmPassword = ""
 
     let networkService = AuthRegistrationNetworkService.shared
     
