@@ -52,31 +52,16 @@ struct AuthorizationView: View {
     
     var authFields: some View {
         VStack {
-            TextField(text: $username)  {
-                Text("Enter login / username")
-                    .foregroundStyle(.black)
-            }
-            .customTextFieldStyle()
-            SecureField(text: $password) {
-                Text("Enter password")
-                    .foregroundStyle(.black)
-            }.customTextFieldStyle()
+            FormField(fieldName: "Enter login", fieldValue: $username, isSecure: false)
+            FormField(fieldName: "Enter password", fieldValue: $password, isSecure: true)
             
             if !viewModel.isAuth {
-                SecureField(text: $confirmPassword) {
-                    Text("Confirm password")
-                        .foregroundStyle(.black)
-                }.customTextFieldStyle()
-                
-                TextField(text: $name)  {
-                    Text("Enter Name")
-                        .foregroundStyle(.black)
-                }.customTextFieldStyle()
-                
-                TextField(text: $lastName)  {
-                    Text("Enter last name")
-                        .foregroundStyle(.black)
-                }.customTextFieldStyle()
+                FormField(fieldName: "Confirm password", 
+                          fieldValue: $confirmPassword,isSecure: true)
+                FormField(fieldName: "Enter name",
+                          fieldValue: $name, isSecure: false)
+                FormField(fieldName: "Enter last name", 
+                          fieldValue: $lastName, isSecure: false)
             }
         }
     }
@@ -110,7 +95,7 @@ struct AuthorizationView: View {
             Button {
                 viewModel.isAuth.toggle()
             } label: {
-                Text(viewModel.isAuth ? "Sign up" : "Sign in")
+                Text(viewModel.isAuth ? "Create account" : "Sign in")
                     .foregroundStyle(.orange)
             }.padding(.horizontal)
             

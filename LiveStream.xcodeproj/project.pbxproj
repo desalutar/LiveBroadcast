@@ -28,6 +28,8 @@
 		235124682C021FA80005D8C9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235124672C021FA80005D8C9 /* Post.swift */; };
 		2351246E2C0220150005D8C9 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351246D2C0220150005D8C9 /* FeedViewModel.swift */; };
 		235124702C022F8E0005D8C9 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2351246F2C022F8E0005D8C9 /* CustomVideoPlayer.swift */; };
+		2352A50A2C6F974D00368314 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352A5092C6F974D00368314 /* FormField.swift */; };
+		2352A50C2C6F9C2C00368314 /* RequirementText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352A50B2C6F9C2C00368314 /* RequirementText.swift */; };
 		2376C85C2C1A6EB900D990F8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C85B2C1A6EB900D990F8 /* MainViewModel.swift */; };
 		2376C85E2C1A6FE700D990F8 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C85D2C1A6FE700D990F8 /* MapView.swift */; };
 		2376C8642C1B106300D990F8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2376C8632C1B106300D990F8 /* LocationManager.swift */; };
@@ -70,6 +72,8 @@
 		235124672C021FA80005D8C9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		2351246D2C0220150005D8C9 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		2351246F2C022F8E0005D8C9 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
+		2352A5092C6F974D00368314 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		2352A50B2C6F9C2C00368314 /* RequirementText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementText.swift; sourceTree = "<group>"; };
 		2376C85B2C1A6EB900D990F8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		2376C85D2C1A6FE700D990F8 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2376C8632C1B106300D990F8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -105,10 +109,12 @@
 			isa = PBXGroup;
 			children = (
 				231F48602C4404A300C5C676 /* AuthorizationView.swift */,
+				2352A5092C6F974D00368314 /* FormField.swift */,
 				234A0D422C6F329300205986 /* CustomTextFieldModifier.swift */,
 				231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */,
 				23826D4B2C47D35E005F2180 /* AuthRegistrationNetworkService.swift */,
 				2395AC502C64FCE300790B90 /* URLSessionPinningDelegate.swift */,
+				2352A50B2C6F9C2C00368314 /* RequirementText.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -418,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2352A50C2C6F9C2C00368314 /* RequirementText.swift in Sources */,
 				235124512C0118540005D8C9 /* OnlineBroadcasts.swift in Sources */,
 				234A0D432C6F329300205986 /* CustomTextFieldModifier.swift in Sources */,
 				235124702C022F8E0005D8C9 /* CustomVideoPlayer.swift in Sources */,
@@ -438,6 +445,7 @@
 				2351244F2C010C250005D8C9 /* MainTabView.swift in Sources */,
 				2376C8D82C31D89600D990F8 /* UsersInfoView.swift in Sources */,
 				23C5E4A32C04CDC700A76759 /* ViewModel.swift in Sources */,
+				2352A50A2C6F974D00368314 /* FormField.swift in Sources */,
 				2376C8D62C3174CB00D990F8 /* SendMessageView.swift in Sources */,
 				2376C86E2C23200F00D990F8 /* NetworkManager.swift in Sources */,
 				235124612C01363E0005D8C9 /* PostGridView.swift in Sources */,

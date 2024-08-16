@@ -79,6 +79,4 @@ class AuthRegistrationNetworkService {
             throw NetworkErrors.decodingError(error.localizedDescription)
         }
     }
-
-    
 }
