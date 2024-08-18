@@ -22,6 +22,6 @@ struct RequirementText: View {
                 .foregroundColor(.secondary)
                 .strikethrough(isStrikeThrough)
             Spacer()
-        }
+        }.padding(.leading, 20)
     }
 }

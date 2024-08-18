@@ -49,17 +49,56 @@ struct AuthorizationView: View {
     var authFields: some View {
         VStack {
             FormField(fieldName: "Enter login", 
-                      fieldValue: $viewModel.username, isSecure: false)
-            FormField(fieldName: "Enter password", 
-                      fieldValue: $viewModel.password, isSecure: true)
-            
+                      fieldValue: $viewModel.username, 
+                      isSecure: false)
+            RequirementText(
+                iconColor: viewModel.isLoginLengthValid ? .secondary : Color(
+                    red: 251/255,
+                    green: 128/255,
+                    blue: 128/255
+                ),
+                text: "Minimum 4 characters",
+                isStrikeThrough: viewModel.isLoginLengthValid
+            )
+            FormField(fieldName: "Enter password",
+                      fieldValue: $viewModel.password, 
+                      isSecure: true)
+            VStack {
+                RequirementText(
+                    iconName: "lock.open",
+                    iconColor: viewModel.isPasswordLengthValid ? .secondary : Color(
+                        red: 251/255,
+                        green: 128/255,
+                        blue: 128/255
+                    ),
+                    text: "Minimum 8 characters",
+                    isStrikeThrough: viewModel.isPasswordLengthValid
+                )
+                RequirementText(
+                    iconName: "lock.open",
+                    iconColor: viewModel.isPasswordLengthValid ? .secondary : Color(
+                        red: 251/255,
+                        green: 128/255,
+                        blue: 128/255
+                    ),
+                    text: "One capital letter character",
+                    isStrikeThrough: viewModel.isPasswordLengthValid
+                )
+            }
             if !viewModel.isAuth {
                 FormField(fieldName: "Confirm password", 
-                          fieldValue: $viewModel.confirmPassword, isSecure: true)
+                          fieldValue: $viewModel.confirmPassword,
+                          isSecure: true)
+                RequirementText(
+                    text: "Passwords must match",
+                    isStrikeThrough: viewModel.isPasswordConfirmValid
+                )
                 FormField(fieldName: "Enter name",
-                          fieldValue: $viewModel.name, isSecure: false)
+                          fieldValue: $viewModel.name, 
+                          isSecure: false)
                 FormField(fieldName: "Enter last name",
-                          fieldValue: $viewModel.lastName, isSecure: false)
+                          fieldValue: $viewModel.lastName,
+                          isSecure: false)
             }
         }
     }
@@ -74,6 +113,10 @@ struct AuthorizationView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 15))
                     .customTextFieldStyle()
             }
+            .disabled(!viewModel.isLoginLengthValid ||
+                      !viewModel.isPasswordLengthValid ||
+                      !viewModel.isPasswordCapitalLetter ||
+                      !viewModel.isPasswordConfirmValid)
             
             Button {
                 viewModel.isAuth.toggle()
