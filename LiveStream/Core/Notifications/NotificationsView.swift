@@ -17,6 +17,7 @@ struct NotificationsView: View {
                     }
                 }
             }
+            .tint(.orange)
             .navigationTitle("Notifications")
             .navigationBarTitleDisplayMode(.inline)
             .padding(.top)

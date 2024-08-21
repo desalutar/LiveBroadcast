@@ -6,25 +6,27 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ProfileHeaderView: View {
-    @StateObject var viewModel = UserProfileViewModel()
+    @StateObject var viewModel = ProfileViewModel()
     var body: some View {
         NavigationStack {
             VStack(spacing: 16) {
                 HStack {
-                    userNotifications
-                    userProfilePhoto
-                    userSettings
+                    notificationsButton
+                    profilePhoto
+                    settingsButton
                 }
-                userFullNameView
+                fullName
                 userStats
                 Divider()
             }
         }
+        .tint(.orange)
     }
     
-    var userNotifications: some View {
+    var notificationsButton: some View {
         NavigationLink(destination: NotificationsView()) {
             Image(systemName: "bell.fill")
                 .resizable()
@@ -34,14 +36,24 @@ struct ProfileHeaderView: View {
         .padding(.trailing, 45)
     }
     
-    var userProfilePhoto: some View {
-        Image(systemName: "person.circle.fill")
-            .resizable()
-            .frame(width: 80, height: 80)
-            .foregroundStyle(Color(.systemGray4))
+    var profilePhoto: some View {
+        PhotosPicker(selection: $viewModel.selectedImage) {
+            if let image = viewModel.profileImage {
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 80, height: 80)
+                    .clipShape(Circle())
+            } else {
+                Image(systemName: "person.circle.fill")
+                    .resizable()
+                    .frame(width: 80, height: 80)
+                    .foregroundStyle(Color(.systemGray4))
+            }
+        }
     }
     
-    var userSettings: some View {
+    var settingsButton: some View {
         NavigationLink(destination: UserProfileSettingsView()){
             Image(systemName: "slider.vertical.3")
                 .resizable()
@@ -51,7 +63,7 @@ struct ProfileHeaderView: View {
         .padding(.leading, 45)
     }
     
-    var userFullNameView: some View {
+    var fullName: some View {
         Text("name lastname")
             .font(.title2)
             .fontWeight(.bold)

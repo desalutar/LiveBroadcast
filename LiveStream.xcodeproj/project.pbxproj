@@ -53,7 +53,7 @@
 		23CBEDEA2C74F6B30071973B /* UserFollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDE92C74F6B30071973B /* UserFollowersView.swift */; };
 		23CBEDEC2C74F7750071973B /* UserFollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDEB2C74F7750071973B /* UserFollowingView.swift */; };
 		23CBEDEE2C74F7A50071973B /* UserLikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDED2C74F7A50071973B /* UserLikesView.swift */; };
-		23CBEDF02C74F8E20071973B /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDEF2C74F8E20071973B /* UserProfileViewModel.swift */; };
+		23CBEDF02C74F8E20071973B /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDEF2C74F8E20071973B /* ProfileViewModel.swift */; };
 		23F8C9B92C0757C9006DAB2A /* BroadcastButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F8C9B82C0757C9006DAB2A /* BroadcastButtons.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +106,7 @@
 		23CBEDE92C74F6B30071973B /* UserFollowersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowersView.swift; sourceTree = "<group>"; };
 		23CBEDEB2C74F7750071973B /* UserFollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowingView.swift; sourceTree = "<group>"; };
 		23CBEDED2C74F7A50071973B /* UserLikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLikesView.swift; sourceTree = "<group>"; };
-		23CBEDEF2C74F8E20071973B /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		23CBEDEF2C74F8E20071973B /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		23F8C9B82C0757C9006DAB2A /* BroadcastButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -390,7 +390,7 @@
 		23CBEDF22C74FAAB0071973B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				23CBEDEF2C74F8E20071973B /* UserProfileViewModel.swift */,
+				23CBEDEF2C74F8E20071973B /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -513,7 +513,7 @@
 				2351246E2C0220150005D8C9 /* FeedViewModel.swift in Sources */,
 				23CBEDEA2C74F6B30071973B /* UserFollowersView.swift in Sources */,
 				23CBEDE82C74F5E30071973B /* UserSettingsView.swift in Sources */,
-				23CBEDF02C74F8E20071973B /* UserProfileViewModel.swift in Sources */,
+				23CBEDF02C74F8E20071973B /* ProfileViewModel.swift in Sources */,
 				232FE0492C68BDBB009E9B79 /* HostName.swift in Sources */,
 				235124682C021FA80005D8C9 /* Post.swift in Sources */,
 				2376C85E2C1A6FE700D990F8 /* MapView.swift in Sources */,

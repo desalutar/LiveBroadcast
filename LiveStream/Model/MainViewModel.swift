@@ -23,6 +23,7 @@ struct User: Codable, Identifiable {
     let name: String
     let username: String
     let lastName: String
+    var userProfilePhoto: String?
     let address: Address?
     
     var userLatitude: Double?

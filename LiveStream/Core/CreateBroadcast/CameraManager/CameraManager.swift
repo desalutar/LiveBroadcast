@@ -9,7 +9,6 @@ import Foundation
 import AVFoundation
 
 class CameraManager: NSObject {
-    
     override init() {
         super.init()
         
