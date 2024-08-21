@@ -49,18 +49,6 @@ struct MainTabView: View {
                 .tag(2)
                 .tint(.cyan)
             
-            NotificationsView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: appState.selectedTab == 3 ? "bell.fill" : "bell")
-                            .environment(\.symbolVariants,
-                                          appState.selectedTab == 3 ? .fill : .none)
-                        Text("Notifications")
-                    }
-                }
-                .onAppear { appState.selectedTab = 3 }
-                .tag(3)
-            
             CurrentUserProfileView()
                 .tabItem {
                     VStack {

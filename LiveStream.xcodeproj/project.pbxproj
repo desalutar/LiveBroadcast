@@ -46,6 +46,14 @@
 		23C5E4A12C04CDC700A76759 /* CMSampleBuffer +Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */; };
 		23C5E4A22C04CDC700A76759 /* BroadcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49C2C04CDC700A76759 /* BroadcastView.swift */; };
 		23C5E4A32C04CDC700A76759 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C5E49D2C04CDC700A76759 /* ViewModel.swift */; };
+		23CBEDDF2C74BFCF0071973B /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDDE2C74BFCF0071973B /* EndPointType.swift */; };
+		23CBEDE12C74C0680071973B /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDE02C74C0680071973B /* HTTPMethod.swift */; };
+		23CBEDE42C74C0B90071973B /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDE32C74C0B90071973B /* HTTPTask.swift */; };
+		23CBEDE82C74F5E30071973B /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDE72C74F5E30071973B /* UserSettingsView.swift */; };
+		23CBEDEA2C74F6B30071973B /* UserFollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDE92C74F6B30071973B /* UserFollowersView.swift */; };
+		23CBEDEC2C74F7750071973B /* UserFollowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDEB2C74F7750071973B /* UserFollowingView.swift */; };
+		23CBEDEE2C74F7A50071973B /* UserLikesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDED2C74F7A50071973B /* UserLikesView.swift */; };
+		23CBEDF02C74F8E20071973B /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CBEDEF2C74F8E20071973B /* UserProfileViewModel.swift */; };
 		23F8C9B92C0757C9006DAB2A /* BroadcastButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F8C9B82C0757C9006DAB2A /* BroadcastButtons.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +99,14 @@
 		23C5E49B2C04CDC700A76759 /* CMSampleBuffer +Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer +Extension.swift"; sourceTree = "<group>"; };
 		23C5E49C2C04CDC700A76759 /* BroadcastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadcastView.swift; sourceTree = "<group>"; };
 		23C5E49D2C04CDC700A76759 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		23CBEDDE2C74BFCF0071973B /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		23CBEDE02C74C0680071973B /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		23CBEDE32C74C0B90071973B /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		23CBEDE72C74F5E30071973B /* UserSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
+		23CBEDE92C74F6B30071973B /* UserFollowersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowersView.swift; sourceTree = "<group>"; };
+		23CBEDEB2C74F7750071973B /* UserFollowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowingView.swift; sourceTree = "<group>"; };
+		23CBEDED2C74F7A50071973B /* UserLikesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLikesView.swift; sourceTree = "<group>"; };
+		23CBEDEF2C74F8E20071973B /* UserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
 		23F8C9B82C0757C9006DAB2A /* BroadcastButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,13 +124,9 @@
 		231F485F2C44045F00C5C676 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				231F48602C4404A300C5C676 /* AuthorizationView.swift */,
-				2352A5092C6F974D00368314 /* FormField.swift */,
-				234A0D422C6F329300205986 /* CustomTextFieldModifier.swift */,
-				231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */,
-				23826D4B2C47D35E005F2180 /* AuthRegistrationNetworkService.swift */,
-				2395AC502C64FCE300790B90 /* URLSessionPinningDelegate.swift */,
-				2352A50B2C6F9C2C00368314 /* RequirementText.swift */,
+				2398416B2C7233F5005E8B3C /* NetworkService */,
+				2398416A2C7233D7005E8B3C /* Views */,
+				2398416C2C723402005E8B3C /* ViewModel */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -149,6 +161,7 @@
 			children = (
 				2395AC542C652B4C00790B90 /* certificate.der */,
 				2376C8652C1B2CF500D990F8 /* Info.plist */,
+				23CBEDDD2C74BF480071973B /* NetworkLayer */,
 				235124432C01091F0005D8C9 /* App */,
 				235124422C01091D0005D8C9 /* Core */,
 				232FE04C2C6A253F009E9B79 /* NetworkServices */,
@@ -229,8 +242,9 @@
 		235124482C01099C0005D8C9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				235124622C0139500005D8C9 /* Components */,
-				235124642C01396E0005D8C9 /* View */,
+				2351245C2C0135920005D8C9 /* CurrentUserProfileView.swift */,
+				23CBEDF22C74FAAB0071973B /* ViewModel */,
+				23CBEDF12C74FA970071973B /* Views */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -260,24 +274,6 @@
 				2351246F2C022F8E0005D8C9 /* CustomVideoPlayer.swift */,
 			);
 			path = "Components ";
-			sourceTree = "<group>";
-		};
-		235124622C0139500005D8C9 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				235124602C01363E0005D8C9 /* PostGridView.swift */,
-				2351245E2C0136330005D8C9 /* ProfileHeaderView.swift */,
-				235124652C0139970005D8C9 /* UserStatView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		235124642C01396E0005D8C9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				2351245C2C0135920005D8C9 /* CurrentUserProfileView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		235124692C021FE30005D8C9 /* Service */ = {
@@ -324,6 +320,34 @@
 			path = CoreLocation;
 			sourceTree = "<group>";
 		};
+		2398416A2C7233D7005E8B3C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				231F48602C4404A300C5C676 /* AuthorizationView.swift */,
+				2352A5092C6F974D00368314 /* FormField.swift */,
+				234A0D422C6F329300205986 /* CustomTextFieldModifier.swift */,
+				2352A50B2C6F9C2C00368314 /* RequirementText.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2398416B2C7233F5005E8B3C /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				23826D4B2C47D35E005F2180 /* AuthRegistrationNetworkService.swift */,
+				2395AC502C64FCE300790B90 /* URLSessionPinningDelegate.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		2398416C2C723402005E8B3C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				231F48622C4554A200C5C676 /* AuthorizationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		23C5E49E2C04CDC700A76759 /* CreateBroadcast */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +356,54 @@
 				23C5E49D2C04CDC700A76759 /* ViewModel.swift */,
 			);
 			path = CreateBroadcast;
+			sourceTree = "<group>";
+		};
+		23CBEDDD2C74BF480071973B /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				23CBEDE22C74C0830071973B /* Service */,
+				23CBEDDE2C74BFCF0071973B /* EndPointType.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		23CBEDE22C74C0830071973B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				23CBEDE02C74C0680071973B /* HTTPMethod.swift */,
+				23CBEDE32C74C0B90071973B /* HTTPTask.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		23CBEDF12C74FA970071973B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23CBEDF32C74FD460071973B /* UserStatsListView */,
+				23CBEDE72C74F5E30071973B /* UserSettingsView.swift */,
+				235124602C01363E0005D8C9 /* PostGridView.swift */,
+				2351245E2C0136330005D8C9 /* ProfileHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		23CBEDF22C74FAAB0071973B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				23CBEDEF2C74F8E20071973B /* UserProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		23CBEDF32C74FD460071973B /* UserStatsListView */ = {
+			isa = PBXGroup;
+			children = (
+				23CBEDE92C74F6B30071973B /* UserFollowersView.swift */,
+				23CBEDEB2C74F7750071973B /* UserFollowingView.swift */,
+				23CBEDED2C74F7A50071973B /* UserLikesView.swift */,
+				235124652C0139970005D8C9 /* UserStatView.swift */,
+			);
+			path = UserStatsListView;
 			sourceTree = "<group>";
 		};
 		23F8C9BA2C0759BC006DAB2A /* CameraManager */ = {
@@ -432,11 +504,16 @@
 				23C5E4A22C04CDC700A76759 /* BroadcastView.swift in Sources */,
 				2351245F2C0136330005D8C9 /* ProfileHeaderView.swift in Sources */,
 				231F48612C4404A300C5C676 /* AuthorizationView.swift in Sources */,
+				23CBEDEE2C74F7A50071973B /* UserLikesView.swift in Sources */,
 				235124532C011A080005D8C9 /* FeedCell.swift in Sources */,
 				235124312C0105A30005D8C9 /* ContentView.swift in Sources */,
 				2376C8B02C29CA1D00D990F8 /* DisplayYourGeolocation.swift in Sources */,
 				2376C8B42C2CC1B900D990F8 /* UserDetailsView.swift in Sources */,
+				23CBEDEC2C74F7750071973B /* UserFollowingView.swift in Sources */,
 				2351246E2C0220150005D8C9 /* FeedViewModel.swift in Sources */,
+				23CBEDEA2C74F6B30071973B /* UserFollowersView.swift in Sources */,
+				23CBEDE82C74F5E30071973B /* UserSettingsView.swift in Sources */,
+				23CBEDF02C74F8E20071973B /* UserProfileViewModel.swift in Sources */,
 				232FE0492C68BDBB009E9B79 /* HostName.swift in Sources */,
 				235124682C021FA80005D8C9 /* Post.swift in Sources */,
 				2376C85E2C1A6FE700D990F8 /* MapView.swift in Sources */,
@@ -446,6 +523,7 @@
 				2376C8D82C31D89600D990F8 /* UsersInfoView.swift in Sources */,
 				23C5E4A32C04CDC700A76759 /* ViewModel.swift in Sources */,
 				2352A50A2C6F974D00368314 /* FormField.swift in Sources */,
+				23CBEDDF2C74BFCF0071973B /* EndPointType.swift in Sources */,
 				2376C8D62C3174CB00D990F8 /* SendMessageView.swift in Sources */,
 				2376C86E2C23200F00D990F8 /* NetworkManager.swift in Sources */,
 				235124612C01363E0005D8C9 /* PostGridView.swift in Sources */,
@@ -455,9 +533,11 @@
 				2351245D2C0135920005D8C9 /* CurrentUserProfileView.swift in Sources */,
 				23F8C9B92C0757C9006DAB2A /* BroadcastButtons.swift in Sources */,
 				231F48632C4554A200C5C676 /* AuthorizationViewModel.swift in Sources */,
+				23CBEDE12C74C0680071973B /* HTTPMethod.swift in Sources */,
 				23C5E4A12C04CDC700A76759 /* CMSampleBuffer +Extension.swift in Sources */,
 				2376C8642C1B106300D990F8 /* LocationManager.swift in Sources */,
 				235124592C01321E0005D8C9 /* NotificationsView.swift in Sources */,
+				23CBEDE42C74C0B90071973B /* HTTPTask.swift in Sources */,
 				2376C85C2C1A6EB900D990F8 /* MainViewModel.swift in Sources */,
 				23C5E49F2C04CDC700A76759 /* CameraManager.swift in Sources */,
 				2395AC512C64FCE300790B90 /* URLSessionPinningDelegate.swift in Sources */,

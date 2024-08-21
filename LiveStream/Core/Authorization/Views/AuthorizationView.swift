@@ -12,7 +12,6 @@ struct AuthorizationView: View {
     @StateObject var viewModel = AuthorizationViewModel()
     @State private var user: User?
     
-    
     var body: some View {
         VStack(spacing: 13) {
             authText

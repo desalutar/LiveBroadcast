@@ -12,8 +12,8 @@ struct LiveStreamApp: App {
     let selectedUser = UserSessionManager()
     var body: some Scene {
         WindowGroup {
-            AuthorizationView().environmentObject(selectedUser)
-//            MainTabView().environmentObject(selectedUser)
+//            AuthorizationView().environmentObject(selectedUser)
+            MainTabView().environmentObject(selectedUser)
         }
     }
 }

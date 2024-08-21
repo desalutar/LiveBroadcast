@@ -13,12 +13,10 @@ struct CurrentUserProfileView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 2) {
-                     // profile header
                     ProfileHeaderView()
-                    
                     PostGridView()
                 }
-                .padding(.top   )
+                .padding(.top)
             }
             .navigationTitle(appState.selectedUser.first?.username ?? "profile")
             .navigationBarTitleDisplayMode(.inline)
