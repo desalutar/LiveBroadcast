@@ -23,7 +23,6 @@ struct ProfileHeaderView: View {
                 Divider()
             }
         }
-        .tint(.orange)
     }
     
     var notificationsButton: some View {
@@ -72,9 +71,9 @@ struct ProfileHeaderView: View {
     var userStats: some View {
         NavigationStack {
             HStack(spacing: 20) {
-                viewModel.userStatNavigationLink(destination: UserFollowingView(), value: 10, title: "Following")
-                viewModel.userStatNavigationLink(destination: UserLikesView(), value: 500, title: "Likes")
-                viewModel.userStatNavigationLink(destination: UserFollowersView(), value: 10203, title: "Followers")
+                viewModel.userStatNavigationLink(destination: FollowingView(), value: 10, title: "Following")
+                viewModel.userStatNavigationLink(destination: LikedByUsersView(), value: 500, title: "Likes")
+                viewModel.userStatNavigationLink(destination: SubscribersView(), value: 10203, title: "Subscribers")
             }
         }
     }

@@ -7,12 +7,27 @@
 
 import SwiftUI
 
-struct UserFollowingView: View {
+struct FollowingView: View {
     var body: some View {
-        Text("Following")
+        NavigationStack {
+            ScrollView {
+                LazyVStack(spacing: 13) {
+                    ForEach(0..<5) { following in
+                        HStack {
+                            UsersActionCell(imageSystemName: "person.circle.fill",
+                                            primaryText: "you subscribed ",
+                                            secondaryText: "GoreTechno ",
+                                            timeAgoText: "7 years ago",
+                                            trailingImage: nil)
+                            .padding(.top, 13)
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    UserFollowingView()
+    FollowingView()
 }

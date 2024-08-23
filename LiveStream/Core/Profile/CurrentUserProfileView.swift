@@ -14,14 +14,15 @@ struct CurrentUserProfileView: View {
             ScrollView {
                 VStack(spacing: 2) {
                     ProfileHeaderView()
+                        .padding(.bottom, 10)
                     PostGridView()
-                }
-                .padding(.top)
+                        .tint(.white)
+                }.padding(.top)
             }
-            .navigationTitle(appState.selectedUser.first?.username ?? "profile")
+            .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
-            
         }
+        .tint(.orange)
     }
 }
 

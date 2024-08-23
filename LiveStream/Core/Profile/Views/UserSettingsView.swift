@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserProfileSettingsView: View {
     var body: some View {
-        Text("Here is your settings")
+        
     }
 }
 
