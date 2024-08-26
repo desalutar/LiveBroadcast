@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserStatView: View {
-    let value: Int
+    let value: String
     let title: String
     var body: some View {
         VStack {
@@ -25,5 +25,5 @@ struct UserStatView: View {
 }
 
 #Preview {
-    UserStatView(value: 0, title: "awds")
+    UserStatView(value: "0", title: "awds")
 }

@@ -16,7 +16,7 @@ class ProfileViewModel: ObservableObject {
         didSet { Task { try await loadImage() } }
     }
     
-    func userStatNavigationLink(destination: some View, value: Int, title: String) -> some View {
+    func userStatNavigationLink(destination: some View, value: String, title: String) -> some View {
         NavigationLink(destination: destination) {
             UserStatView(value: value, title: title)
                 .foregroundStyle(.orange)

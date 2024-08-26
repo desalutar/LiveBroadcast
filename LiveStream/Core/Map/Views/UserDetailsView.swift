@@ -70,9 +70,9 @@ struct UserDetailsView: View {
     
     var userStatView: some View {
         HStack(spacing: 50) {
-            UserStatView(value: 1, title: "Following")
-            UserStatView(value: 1, title: "Likes")
-            UserStatView(value: 1, title: "Followers")
+            UserStatView(value: "1", title: "Following")
+            UserStatView(value: "1", title: "Likes")
+            UserStatView(value: "1", title: "Followers")
         }
         .padding(.top, 15)
         .padding(.bottom, 15)
@@ -98,5 +98,5 @@ struct DetailUsersPostGridView: View {
 }
 
 //#Preview {
-//    UserDetailsView(users: )
+//    UserDetailsView(users: User(id: UUID().uuidString, name: "lolo", username: "asdasd", lastName: "sadaw", address: nil), showingSheet: true)
 //}

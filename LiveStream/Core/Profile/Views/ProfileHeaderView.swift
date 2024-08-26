@@ -9,6 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct ProfileHeaderView: View {
+    @EnvironmentObject var appState: UserSessionManager
     @StateObject var viewModel = ProfileViewModel()
     var body: some View {
         NavigationStack {
@@ -63,7 +64,7 @@ struct ProfileHeaderView: View {
     }
     
     var fullName: some View {
-        Text("name lastname")
+        Text(appState.selectedUser.first?.name ?? "not a name")
             .font(.title2)
             .fontWeight(.bold)
     }
@@ -71,9 +72,9 @@ struct ProfileHeaderView: View {
     var userStats: some View {
         NavigationStack {
             HStack(spacing: 20) {
-                viewModel.userStatNavigationLink(destination: FollowingView(), value: 10, title: "Following")
-                viewModel.userStatNavigationLink(destination: LikedByUsersView(), value: 500, title: "Likes")
-                viewModel.userStatNavigationLink(destination: SubscribersView(), value: 10203, title: "Subscribers")
+                viewModel.userStatNavigationLink(destination: FollowingView(), value: appState.selectedUser.first?.userStats?.followingCount ?? "0", title: "Following")
+                viewModel.userStatNavigationLink(destination: LikedByUsersView(), value: appState.selectedUser.first?.userStats?.likesCount ?? "0", title: "Likes")
+                viewModel.userStatNavigationLink(destination: SubscribersView(), value: appState.selectedUser.first?.userStats?.followersCount ?? "0", title: "Subscribers")
             }
         }
     }
