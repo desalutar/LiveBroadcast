@@ -9,22 +9,29 @@ import SwiftUI
 
 struct CurrentUserProfileView: View {
     @EnvironmentObject var appState: UserSessionManager
+    @State private var progress: Double = 0.5
+    var userMediaItem = UserMediaItem(id: "0", userPhoto: "123")
     var body: some View {
         NavigationStack {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack(spacing: 2) {
                     ProfileHeaderView()
-                    PostGridView()
-                }
-                .padding(.top)
+                    ForEach(0..<5) {_ in
+                        UserMediaItemView(item: userMediaItem)
+                    }
+                }.padding(.top)
             }
-            .navigationTitle(appState.selectedUser.first?.username ?? "profile")
+            .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
-            
         }
+        .tint(.orange)
     }
 }
 
-#Preview {
-    CurrentUserProfileView()
+struct CurrentUserProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        let appState = UserSessionManager()
+        return CurrentUserProfileView()
+            .environmentObject(appState)
+    }
 }

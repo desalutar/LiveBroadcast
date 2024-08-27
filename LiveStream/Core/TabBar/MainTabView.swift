@@ -10,7 +10,7 @@ import UIKit
 
 struct MainTabView: View {
     @EnvironmentObject var appState: UserSessionManager
-    @State private var viewModel = ViewModel()
+    @State private var viewModel = CameraViewModel()
     
     var body: some View {
         TabView(selection: $appState.selectedTab) {

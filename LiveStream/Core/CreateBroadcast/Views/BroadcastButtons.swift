@@ -14,7 +14,7 @@ struct BroadcastButtons: View {
             HStack {
                 Spacer()
                 Button {
-                    // кнопка для смены камеры
+                    
                 } label: {
                     Image(systemName: "arrow.triangle.2.circlepath.camera.fill")
                         .resizable()

@@ -28,7 +28,7 @@ struct AuthorizationView: View {
         }
         .padding(.bottom, 70)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .animation(Animation.linear(duration: 0.3), 
+        .animation(Animation.linear(duration: 0.3),
                    value: viewModel.isAuth)
         .fullScreenCover(isPresented: $viewModel.isShowMapView) {
             MainTabView(appState: _appState)

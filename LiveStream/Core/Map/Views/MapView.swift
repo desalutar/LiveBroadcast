@@ -67,7 +67,7 @@ extension CLLocationCoordinate2D {
     )
 }
 
-//#Preview {
-//    MapView(selectedTab: )
-//}
+#Preview {
+    MapView()
+}
 
